@@ -1,0 +1,236 @@
+<!-- Template for button widget -->
+<script type="text/ng-template" id="button.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-button" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <ripple ng-class="vm.editMode ? 'disabled' : ''" ng-click="vm.widgetAction(item)">
+            <div class="tb-widget-tile-body" layout-fill layout="column" layout-align="center center">
+                <i class="fa {{item.icon}}" aria-hidden="true"></i>
+            </div>
+        </ripple>
+    </md-whiteframe>
+</script>
+
+<!-- Template for switch widget -->
+<script type="text/ng-template" id="switch.html">
+    <tb-switch-widget item="item" vm="vm" index="$index">
+    </tb-switch-widget>
+</script>
+
+<!-- Template for slider widget -->
+<script type="text/ng-template" id="slider.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-slider" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <div class="tb-widget-tile-body" layout-fill layout="row" layout-align="center center">
+            <div>
+                <i class="fa {{item.icon}}" aria-hidden="true"></i>
+            </div>
+        </div>
+        <md-slider md-discrete ng-change="vm.widgetAction(item)" class="white-slider" ng-disabled="vm.editMode" ng-model="item.value"
+            flex min="{{item.min}}" max="{{item.max}}" aria-label="Slider" class="md-primary">
+        </md-slider>
+    </md-whiteframe>
+</script>
+
+<!-- Template for gauge widget -->
+<script type="text/ng-template" id="gauge.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-gauge" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <div class="tb-widget-tile-body" layout-fill layout="column" layout-align="center center">
+            <ng-gauge thick="10" size="{{item.size}}" type="arch" min="item.min" max="item.max" value="item.value | displayFormat:item.displayFormat:0"
+                cap="round" label="" foreground-color="gold" prepend="{{item.value | displayFormat:item.displayFormat:-1}}" append="{{item.value | displayFormat:item.displayFormat:1}}">
+            </ng-gauge>
+            <div class="tb-widget-gauge-icon">
+                <div>
+                    <i class="fa {{item.icon}}" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </md-whiteframe>
+</script>
+
+<!-- Template for value display widget -->
+<script type="text/ng-template" id="valuedisplay.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-value-display" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <div class="tb-widget-tile-body" layout-fill layout="column" layout-align="center center">
+            <div>
+                <span>{{item.value | displayFormat:item.displayFormat}}</span>
+            </div>
+        </div>
+        <div class="tb-widget-value-display-icon">
+            <i class="fa {{item.icon}}" aria-hidden="true"></i>
+        </div>
+    </md-whiteframe>
+</script>
+
+<!-- Template for value chart widget -->
+<script type="text/ng-template" id="chart.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-chart" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <div class="tb-widget-tile-body" layout-fill>
+            <div>
+                <canvas id="line" class="chart chart-line" chart-data="item.data" chart-labels="item.labels" chart-options="vm.lineChartOptions">
+                </canvas>
+            </div>
+        </div>
+    </md-whiteframe>
+</script>
+
+<!-- Template for value step control widget -->
+<script type="text/ng-template" id="stepControl.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-step-control" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <div class="tb-widget-tile-body" layout-fill layout="column" layout-align="space-around center">
+            <div>
+                <ripple ng-click="vm.widgetAction(item, 1)" class="r-round" ng-class="vm.editMode ? 'disabled' : ''">
+                    <i class="icon-chevron-up" aria-hidden="true"></i>
+                </ripple>
+
+                <div layout-fill layout="row" layout-align="space-around center">
+                    <span>{{item.value}}</span>
+                </div>
+
+                <ripple ng-click="vm.widgetAction(item, -1)" class="r-round" ng-class="vm.editMode ? 'disabled' : ''">
+                    <i class="icon-chevron-down" aria-hidden="true"></i>
+                </ripple>
+            </div>
+            <div class="tb-widget-step-control-icon">
+                <i class="{{item.icon}}" aria-hidden="true"></i>
+            </div>
+        </div>
+    </md-whiteframe>
+</script>
+
+<!-- Template for color picker widget -->
+<script type="text/ng-template" id="colorPicker.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-color-picker" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <ripple ng-class="vm.editMode ? 'disabled' : ''" ng-click="vm.setColor($event, item)">
+            <div class="tb-widget-color tb-widget-tile-body">
+                <color-picker ng-model="item.displayColor"></color-picker>
+            </div>
+        </ripple>
+    </md-whiteframe>
+</script>
+
+<!-- Template for gmap widget -->
+<script type="text/ng-template" id="gmap.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-button" ng-attr-style="background-color: {{item.bgColor}};">
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <div id="{{item.id}}" class="tb-gmap-widget"></div>
+    </md-whiteframe>
+</script>
+
+<!-- Temlate for clock widget -->
+<script type="text/ng-template" id="clock.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-clock" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <div class="tb-widget-tile-body" layout-fill layout="column" layout-align="center center">
+            <ds-widget-clock gmt-offset="item.timezone" class="tb-date" show-digital digital-format="'EEE, MMM dd'"></ds-widget-clock>
+            <ds-widget-clock gmt-offset="item.timezone" class="tb-time" show-digital digital-format="'HH:mm:ss'"></ds-widget-clock>
+        </div>
+    </md-whiteframe>
+</script>
+
+<!-- Template for menu widget -->
+<script type="text/ng-template" id="menu.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp tb-widget-menu" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <ripple ng-class="vm.editMode ? 'disabled' : ''" ng-click="vm.showMenuWidget(item)">
+            <div class="tb-widget-tile-body" layout-fill layout="column" layout-align="center center">
+                <i class="{{item.icon}}" aria-hidden="true"></i>
+            </div>
+        </ripple>
+    </md-whiteframe>
+</script>
+
+<!-- Template for Joystick widget -->
+<script type="text/ng-template" id="joystick.html">
+    <md-whiteframe flex layout class="md-whiteframe-4dp" ng-attr-style="background-color: {{item.bgColor}};">
+        <div class="tb-widget-tile-header">
+            <h4 ng-if="item.name.length">{{item.name}}</h4>
+        </div>
+        <div ng-if="vm.editMode" class="tb-widget-edit">
+            <md-button ng-click="vm.toggleWidgetConfig($index)" ng-touchstart="vm.toggleWidgetConfig($index)">
+                <md-icon class="material-icons md-light md-48">mode_edit</md-icon>
+            </md-button>
+        </div>
+        <div ng-hide="vm.editMode" class="joystick_container" layout layout-fill layout-align="center center" id="{{'joystick'+item.id}}"
+            ng-class="vm.editMode ? 'disabled' : ''">
+            <div class="material-icons tb-widget-joystick-icon">
+                touch_app
+            </div>
+            <div class="nipple">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+    </md-whiteframe>
+</script>

@@ -1,0 +1,134 @@
+  /**
+ * Copyright © 2017 The Blocky Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+  @import '../../scss/constants';
+  #home {
+    h1 {
+      font-size: 24px;
+      line-height: 19px;
+      margin-left: 5px;
+      margin-top: 15px;
+    }
+    h6 {
+      margin: 2px 0 5px 5px;
+      font-size: 8px;
+    }
+    md-toolbar {
+      .md-button {
+        min-width: 1% !important;
+        min-height: 1% !important;
+      }
+    }
+    .md-nav-bar {
+      justify-content: center;
+      i {
+        vertical-align: middle;
+        margin-right: 8px;
+        @media (max-width: $layout-breakpoint-xs) {
+          font-size: 1.5em !important;
+        }
+      }
+      border: none !important;
+      .md-button._md-nav-button.md-unselected {
+        color: #fff;
+      }
+      md-nav-ink-bar {
+        top: 53px;
+        @media (max-width: $layout-breakpoint-sm) {
+          top: 50px;
+        }
+      }
+    }
+  }
+
+  .tb-reset-password-card {
+    margin: 0 !important;
+    @media (max-width: $layout-breakpoint-sm) {
+      width: 100% !important;
+    }
+  }
+
+  md-content {
+    overflow-y: hidden !important;
+  }
+
+  md-select-menu md-content {
+    overflow-y: auto !important;
+  }
+
+  [ng-click],
+  [data-ng-click],
+  [x-ng-click] {
+    cursor: pointer;
+  }
+  /**
+ * Blocky policy
+ */
+
+  .cl-banner {
+    background: rgba(0, 0, 0, 0.87);
+    height: auto;
+    min-height: 24px;
+    line-height: 24px;
+    color: #eeeeee;
+    text-align: center;
+    padding: 10px 25px 15px;
+    z-index: 10000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .cl-banner p {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .cl-banner a {
+    color: white;
+    display: inline-block;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 0 6px;
+    margin: 11px 20px 0 20px;
+  }
+
+  .cl-banner .cl-accept {
+    background: #007700;
+  }
+
+  .cl-banner .cl-accept:hover {
+    background: #009900;
+  }
+
+  .cl-banner .cl-disable {
+    background: #990000;
+  }
+
+  .cl-banner .cl-disable:hover {
+    background: #bb0000;
+  }
+
+  .cl-banner .cl-policy {
+    background: #0033bb;
+  }
+
+  .cl-banner .cl-policy:hover {
+    background: #0055dd;
+  }
