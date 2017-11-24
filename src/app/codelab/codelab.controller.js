@@ -607,7 +607,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
 
     function downloadProject() {
         updatePythonFromBlock();
-        exportToPc(vm.script.python, vm.script.name + '.python');
+        exportToPc(vm.script.python, vm.script.name + '.py');
     }
 
     function exportToPc(data, filename) {
@@ -616,7 +616,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
         }
 
         if (!filename) {
-            filename = 'download.txt';
+            filename = 'download.py';
         }
 
         var blob = new Blob([data], {
