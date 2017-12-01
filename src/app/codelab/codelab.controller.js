@@ -142,6 +142,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     vm.showBottomSheetActions = showBottomSheetActions;
     vm.renameProject = renameProject;
     vm.deleteProject = deleteProject;
+    vm.shareProject = shareProject;
     vm.showDeviceLog = showDeviceLog;
     vm.renameDevice = renameDevice;
     vm.saveDevice = saveDevice;
@@ -513,6 +514,36 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                 });
             },
             function () {});
+    }
+
+    function shareProject($event) {
+        $mdBottomSheet.hide();
+
+        if (angular.isUndefined(vm.script.isPublic) || vm.script.isPublic !== 1) {
+            var confirm = $mdDialog.confirm()
+                .targetEvent($event)
+                .title($translate.instant('project.share-project-title', {
+                    projectName: vm.script.name
+                }))
+                .htmlContent($translate.instant('project.share-project-text'))
+                .ariaLabel($translate.instant('action.share'))
+                .cancel($translate.instant('action.cancel'))
+                .ok($translate.instant('action.share'));
+            $mdDialog.show(confirm).then(function () {
+                vm.script.isPublic = 1;
+                scriptService.saveScript(vm.script).then(function success() {
+                    shareProject();
+                });
+            },
+                function () { });
+        } else {
+            showSharedProject();
+        }
+
+    }
+
+    function showSharedProject() {
+        alert("shared");
     }
 
     function toggleSidenav() {

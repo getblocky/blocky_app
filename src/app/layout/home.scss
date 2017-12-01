@@ -74,6 +74,13 @@
   [x-ng-click] {
     cursor: pointer;
   }
+
+  md-bottom-sheet {
+    .md-button {
+      text-transform: unset;
+    }
+  }
+
   /**
  * Blocky policy
  */

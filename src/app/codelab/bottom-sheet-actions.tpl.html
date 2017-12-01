@@ -26,10 +26,15 @@
                 <i class="fa fa-trash-o" aria-hidden="true"></i><span> Delete Project</span>
             </md-button>
         </md-list-item>
-        <md-divider ng-show="vm.currentDevice"></md-divider>
+        <md-list-item ng-show="vm.script.id">
+            <md-button aria-label="Share Project" ng-click="vm.shareProject()" class="md-list-item-content">
+                <i class="fa fa-share-alt" aria-hidden="true"></i><span> Share Project</span>
+            </md-button>
+        </md-list-item>
+        <md-divider></md-divider>
         <md-list-item>
             <md-button ng-click="vm.addDevice($event)">
-                <i class="fa fa-plus" aria-hidden="true"></i><span> Setup device</span>
+                <i class="fa fa-plus" aria-hidden="true"></i><span> Setup Device</span>
             </md-button>
         </md-list-item>
         <md-list-item ng-show="vm.currentDevice">
