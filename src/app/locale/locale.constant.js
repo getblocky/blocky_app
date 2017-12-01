@@ -323,18 +323,16 @@ export default angular.module('blocky.locale', [])
                     "upload-to-device": "Upload to device",
                     "open-existing-script": "Open existing script",
                     "edit-blockly": "Edit Blockly",
-                    "edit-python": "Edit Python",
+                    "edit-lua": "Edit Lua",
                     "script-save-failed-error": "Failed to save script",
                     "confirm-convert-title": "Oops, there is a problem converting your code.",
-                    "confirm-convert-content": "We are unable to convert your Python code back to blocks. You can keep working in Python or discard your changes and go back to the previous Blocks version.",
+                    "confirm-convert-content": "We are unable to convert your Lua code back to blocks. You can keep working in Lua or discard your changes and go back to the previous Blocks version.",
                     "confirm-convert-ok": "Discard and go to Blocks",
-                    "confirm-convert-cancel": "Stay in Python",
+                    "confirm-convert-cancel": "Stay in Lua",
                 },
                 "project": {
                     "delete-project-title": "Are you sure you want to delete the project '{{projectName}}'?",
-                    "delete-project-text": "Be careful, after the confirmation the project and all related data will become unrecoverable.",
-                    "share-project-title": "Share Project",
-                    "share-project-text": "You need to publish your project to share it or embed it in other web pages. You acknowledge having consent to publish this project."
+                    "delete-project-text": "Be careful, after the confirmation the project and all related data will become unrecoverable."
                 },
                 "dashboard": {
                     "dashboards": "Dashboards",
