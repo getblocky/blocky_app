@@ -332,7 +332,9 @@ export default angular.module('blocky.locale', [])
                 },
                 "project": {
                     "delete-project-title": "Are you sure you want to delete the project '{{projectName}}'?",
-                    "delete-project-text": "Be careful, after the confirmation the project and all related data will become unrecoverable."
+                    "delete-project-text": "Be careful, after the confirmation the project and all related data will become unrecoverable.",
+                    "share-project-title": "Share Project",
+                    "share-project-text": "You need to publish your project to share it or embed it in other web pages. You acknowledge having consent to publish this project."
                 },
                 "dashboard": {
                     "dashboards": "Dashboards",
