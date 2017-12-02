@@ -750,6 +750,7 @@ export default function DashboardController($scope, userService, dashboardServic
             initJoystick(joystick);
         }
         $mdSidenav('widget-library').close();
+        toggleWidgetConfig(vm.currentDashboard.content.length -1);
     }
 
     function widgetAction(widget, option) {
