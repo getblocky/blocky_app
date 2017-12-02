@@ -1,0 +1,49 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto,'Helvetica Neue',sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+#topnav {
+    overflow: hidden;
+    background-color: rgb(63, 81, 181);
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#blocklyArea, #codeArea {
+    display: flex;
+}
+
+#edit-project {
+    cursor: pointer;
+}
+
+td.hljs-ln-numbers {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	text-align: center;
+	color: #ccc;
+	border-right: 1px solid #CCC;
+	vertical-align: top;
+	padding-right: 5px;
+}
+
+td.hljs-ln-code {
+	padding-left: 10px;
+}

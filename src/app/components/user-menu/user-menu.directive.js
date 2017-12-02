@@ -96,5 +96,6 @@ function UserMenuController($scope, $rootScope, userService, $translate, $state,
         userService.logout();
         store.remove('script');
         $window.location.reload();
+        store.remove('script');
     }
 }

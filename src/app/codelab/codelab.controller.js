@@ -267,12 +267,10 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                     snap: true
                 },
                 toolbox: document.getElementById('toolbox'),
-                sounds: false,
                 zoom: {
                     controls: true,
                     wheel: false
-                },
-                trashcan: true
+                }
             });
 
             var blocklyArea = document.getElementById('main-content');

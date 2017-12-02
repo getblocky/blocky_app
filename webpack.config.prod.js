@@ -47,6 +47,10 @@ module.exports = {
             {
                 from: './src/app/libs',
                 to: '../'
+            },
+            {
+                from: './src/app/share',
+                to: '../share'
             }
         ]),
         new HtmlWebpackPlugin({

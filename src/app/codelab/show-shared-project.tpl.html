@@ -31,7 +31,7 @@
             <md-input-container class="md-icon-float md-icon-right md-block">
                 <div layout="row" layout-align="space-between start">
                     <div flex>
-                        <input id="shared-url" ng-readonly="true" md-select-on-focus value="{{vm.homeUrl + '/share/codelab/' + vm.script.id}}" type="text">
+                        <input id="shared-url" ng-readonly="true" md-select-on-focus value="{{vm.homeUrl + '/share/codelab/#' + vm.script.id}}" type="text">
                     </div>
                     <md-button ngclipboard data-clipboard-target="#shared-url" class="md-icon-button" aria-label="Copy">
                         <md-icon>content_copy</md-icon>
@@ -44,9 +44,9 @@
                     <md-icon>content_copy</md-icon>
                 </md-button>
             </div>
-            <md-input-container>
-                <textarea id="shared-embed" rows="5" ng-readonly="true" md-select-on-focus>
-                </textarea>
+            <md-input-container style="width: 100%; margin-top: 0;">
+                <textarea id="shared-embed" rows="5" ng-readonly="true" md-select-on-focus style="font-size: 12px; font-family: Courier New;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="{{vm.homeUrl + '/share/codelab/#' + vm.script.id}}"
+                    frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></textarea>
             </md-input-container>
         </div>
     </md-dialog-content>
