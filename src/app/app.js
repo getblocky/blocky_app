@@ -63,6 +63,7 @@ import 'angular-cookie-law/dist/angular-cookie-law.min.js';
 import 'ngGeolocation/ngGeolocation.min.js';
 import 'angular-clock/dist/angular-clock.min.js';
 import 'angular-clock/dist/angular-clock.css';
+import 'ngclipboard';
 
 import AppConfig from './app.config';
 import GlobalInterceptor from './global-interceptor.service';
@@ -94,6 +95,7 @@ angular.module('blocky', [
         'ngGeolocation',
         'ds.clock',
         'ui.tree',
+        'ngclipboard'
     ])
     .config(AppConfig)
     .factory('globalInterceptor', GlobalInterceptor)

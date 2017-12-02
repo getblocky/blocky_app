@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
+/* eslint-disable no-undef, angular/window-service, angular/document-service */
+
 (function () {
     if (!String.prototype.startsWith) {
-        String.prototype.startsWith = function(searchString, position) {
+        String.prototype.startsWith = function (searchString, position) {
             position = position || 0;
             return this.indexOf(searchString, position) === position;
         };
@@ -25,5 +27,8 @@
         String.prototype.endsWith = function (suffix) {
             return this.indexOf(suffix, this.length - suffix.length) !== -1;
         };
+    }
+    if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
     }
 })();

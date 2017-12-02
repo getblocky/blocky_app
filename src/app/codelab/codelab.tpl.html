@@ -130,9 +130,9 @@
         <span hide-sm> Delete</span>
     </md-button>
 
-    <md-button ng-show="vm.script.id" ng-click="vm.shareProject()" hide-xs>
+    <md-button ng-style="{'color': vm.script.isPublic ? 'green' : ''}" ng-show="vm.script.id" ng-click="vm.shareProject()" hide-xs>
         <i class="fa fa-share-alt" aria-hidden="true"></i>
-        <span hide-sm> Share</span>
+        <span hide-sm> {{vm.script.isPublic ? "Shared" : "Share"}}</span>
     </md-button>
 
     <!-- In Mobile -->

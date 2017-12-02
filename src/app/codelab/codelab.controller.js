@@ -31,6 +31,7 @@ import blocklyToolbox from './blockly-toolbox.tpl.html';
 import renameDeviceTemplate from './rename-device.tpl.html';
 import registerDeviceTemplate from './register-new-device.tpl.html';
 import RegisterNewDeviceController from './register-new-device.controller.js';
+import showSharedProjectTemplate from './show-shared-project.tpl.html';
 
 /* eslint-disable no-undef, angular/window-service, angular/document-service */
 
@@ -87,6 +88,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     vm.scriptId = $stateParams.scriptId;
     vm.localScript = store.get('script');
     vm.workspace = null;
+    vm.homeUrl = window.location.origin;
 
     initScriptData();
 
@@ -217,6 +219,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                     vm.script.xml = script.xml || '';
                     vm.script.python = script.python || '';
                     vm.script.mode = script.mode || 'block';
+                    vm.script.isPublic = script.isPublic || 0;
                     if (vm.script.mode === 'block') {
                         vm.xmlText = vm.script.xml;
                         onResize();
@@ -409,7 +412,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                 controllerAs: 'vm',
                 templateUrl: saveProjectMobileTemplate,
                 parent: angular.element($document[0].body),
-                fullscreen: false
+                fullscreen: true
             }).then(function () {}, function () {});
         } else {
             saveProject();
@@ -442,6 +445,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     function duplicateProject() {
         vm.script.name = vm.script.name + ' (Duplicated)';
         vm.script.id = '';
+        vm.script.isPublic = 0;
         //$location.path('/codelab/' + script.id);
         store.set('script', vm.script);
         $mdBottomSheet.hide();
@@ -548,20 +552,31 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                 .cancel($translate.instant('action.cancel'))
                 .ok($translate.instant('action.share'));
             $mdDialog.show(confirm).then(function () {
+                var xml = Blockly.Xml.workspaceToDom(vm.workspace);
                 vm.script.isPublic = 1;
+                vm.script.xml = Blockly.Xml.domToText(xml);
+                updatePythonFromBlock();
+                store.set('script', vm.script);
                 scriptService.saveScript(vm.script).then(function success() {
                     shareProject();
                 });
             },
                 function () { });
         } else {
+            $mdDialog.cancel();
             showSharedProject();
         }
 
     }
 
     function showSharedProject() {
-        alert("shared");
+        $mdDialog.show({
+            controller: () => vm,
+            controllerAs: 'vm',
+            templateUrl: showSharedProjectTemplate,
+            parent: angular.element($document[0].body),
+            fullscreen: true
+        }).then(function () {}, function () {});
     }
 
     function toggleSidenav() {

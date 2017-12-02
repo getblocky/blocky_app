@@ -32,8 +32,8 @@
             </md-button>
         </md-list-item>
         <md-list-item ng-show="vm.script.id">
-            <md-button aria-label="Share Project" ng-click="vm.shareProject()" class="md-list-item-content">
-                <i class="fa fa-share-alt" aria-hidden="true"></i><span> Share Project</span>
+            <md-button ng-style="{'color': vm.script.isPublic ? 'green' : ''}" aria-label="Share Project" ng-click="vm.shareProject()" class="md-list-item-content">
+                <i class="fa fa-share-alt" aria-hidden="true"></i><span> {{vm.script.isPublic ? "Shared Project" : "Share Project"}}</span>
             </md-button>
         </md-list-item>
         <md-divider></md-divider>

@@ -52,6 +52,7 @@
     "moment": "^2.18.1",
     "ng-ripple": "^1.0.3",
     "ngGeolocation": "0.0.7",
+    "ngclipboard": "^1.1.2",
     "nipplejs": "^0.6.7",
     "sass-material-colors": "0.0.5",
     "typeface-roboto": "0.0.29"
