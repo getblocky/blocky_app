@@ -2,7 +2,7 @@ html,
 body {
     height: 100%;
     margin: 0;
-    font-family: Roboto,'Helvetica Neue',sans-serif;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -21,29 +21,52 @@ body {
     padding-right: 16px;
 }
 
-#blocklyArea, #codeArea {
+#blocklyArea,
+#codeArea {
     display: flex;
 }
 
 #edit-project {
     cursor: pointer;
+    align-items: center;
+    display: flex;
+}
+
+#edit-project span {
+    margin-left: 8px;
 }
 
 td.hljs-ln-numbers {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
-	text-align: center;
-	color: #ccc;
-	border-right: 1px solid #CCC;
-	vertical-align: top;
-	padding-right: 5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    padding-right: 5px;
 }
 
 td.hljs-ln-code {
-	padding-left: 10px;
+    padding-left: 10px;
+}
+
+@media (max-width: 767px) {
+    .hidden-xs {
+        display: none !important;
+    }
+}
+
+h3 {
+    font-size: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 5px;
+}
+
+.overlay {
+    pointer-events: none;
 }
