@@ -1,3 +1,5 @@
+/* eslint-disable no-undef, angular/window-service, angular/document-service */
+
 if (!window.location.origin) {
     window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ?
         ':' + window.location.port : '');
@@ -13,7 +15,6 @@ $(document).ready(function () {
     getProjectData();
 
     function getProjectData() {
-        console.log('getProjectData');
         var projectId = window.location.hash.substr(1);
         $('.content').hide();
         $.ajax({
@@ -73,7 +74,7 @@ function showBlock(xmlText) {
         $('.blocklyBlockCanvas').addClass('overlay');
     }
 
-    var onresize = function (e) {
+    var onresize = function () {
         // Compute the absolute coordinates and dimensions of blocklyArea.
         var element = blocklyArea;
         var x = 0;
