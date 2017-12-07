@@ -18,6 +18,7 @@
 <div flex layout="row" id="code-lab">
     <div flex id="main-content" layout="column">
         <div ng-include src="vm.blocklyToolbox"></div>
+        <div ng-include src="vm.blocklyWorkspace"></div>
         <div id="blocklyDiv" style="position: absolute" ng-show="!vm.script.mode || vm.script.mode ==='block'"></div>
         <div flex ui-ace="vm.pythonEditorOptions" ng-show="vm.script.mode ==='python'" ng-model="vm.script.python"></div>
     </div>
