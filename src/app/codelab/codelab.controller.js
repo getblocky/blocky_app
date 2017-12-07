@@ -86,7 +86,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     vm.isSidenavOpen = true;
     vm.blocklyToolbox = blocklyToolbox;
     vm.blocklyWorkspace = blocklyWorkspace;
-    vm.xmlText = '';
     vm.scriptId = $stateParams.scriptId;
     vm.localScript = store.get('script');
     vm.workspace = null;
@@ -100,16 +99,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
             if (vm.currentDevice.id) {
                 store.set('selectedDeviceId', vm.currentDevice.id);
             }
-        }
-    });
-
-    $scope.$watch(() => this.xmlText, function (newValue, oldValue) {
-        if (vm.workspace && !angular.equals(newValue, oldValue)) {
-            if (Blockly.mainWorkspace !== null) {
-                Blockly.mainWorkspace.clear();
-            }
-            var xml = Blockly.Xml.textToDom(newValue);
-            Blockly.Xml.domToWorkspace(xml, vm.workspace);
         }
     });
 
@@ -204,16 +193,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     }
 
     function initScriptData() {
-        if ($state.current.name === 'home.codelab.new') {
-            store.remove('script');
-            vm.script = {
-                name: '',
-                xml: '',
-                python: '',
-                mode: 'block'
-            };
-            vm.xmlText = '';
-        } else if (vm.scriptId) { // Load existing script
+        if (vm.scriptId) { // Load existing script
             scriptService.getScript(vm.scriptId).then(
                 function success(script) {
                     vm.script.id = script.id;
@@ -223,7 +203,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                     vm.script.mode = script.mode || 'block';
                     vm.script.isPublic = script.isPublic || 0;
                     if (vm.script.mode === 'block') {
-                        vm.xmlText = vm.script.xml;
                         onResize();
                     }
                 },
@@ -233,9 +212,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
             );
         } else if (vm.localScript) {
             vm.script = vm.localScript;
-            if (vm.script.mode === 'block') {
-                vm.xmlText = vm.script.xml;
-            }
         }
     }
 
@@ -362,7 +338,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
 
     function changeMode($event) {
         if (vm.script.mode === 'python') {
-            if (vm.script.python !== Blockly.Python.workspaceToCode(vm.workspace)) {
+            if (vm.script.python.replace(/(\r\n|\n|\r)/gm, '') !== store.get('script').python.replace(/(\r\n|\n|\r)/gm, '')) {
                 var confirm = $mdDialog.confirm()
                     .title($translate.instant('script.confirm-convert-title'))
                     .htmlContent($translate.instant('script.confirm-convert-content'))
@@ -503,6 +479,18 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
 
     function newProject() {
         $mdBottomSheet.hide();
+        store.remove('script');
+        vm.script = {
+            name: '',
+            xml: '',
+            python: '',
+            mode: 'block'
+        };
+        if (angular.isDefined(Blockly.mainWorkspace)) {
+            Blockly.mainWorkspace.clear();
+        }
+        Blockly.Xml.domToWorkspace(document.getElementById('workspaceBlocks'),
+            vm.workspace);
         $state.go('home.codelab.new');
     }
 
@@ -555,16 +543,16 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                 .cancel($translate.instant('action.cancel'))
                 .ok($translate.instant('action.share'));
             $mdDialog.show(confirm).then(function () {
-                var xml = Blockly.Xml.workspaceToDom(vm.workspace);
-                vm.script.isPublic = 1;
-                vm.script.xml = Blockly.Xml.domToText(xml);
-                updatePythonFromBlock();
-                store.set('script', vm.script);
-                scriptService.saveScript(vm.script).then(function success() {
-                    shareProject();
-                });
-            },
-                function () { });
+                    var xml = Blockly.Xml.workspaceToDom(vm.workspace);
+                    vm.script.isPublic = 1;
+                    vm.script.xml = Blockly.Xml.domToText(xml);
+                    updatePythonFromBlock();
+                    store.set('script', vm.script);
+                    scriptService.saveScript(vm.script).then(function success() {
+                        shareProject();
+                    });
+                },
+                function () {});
         } else {
             $mdDialog.cancel();
             showSharedProject();
@@ -664,8 +652,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
             function success() {
                 var chipId = vm.currentDevice.chipId;
                 var topic = baseSysTopicUrl + '/' + chipId + '/rename';
-                mqttClient.publish(topic, vm.currentDevice.name, null, function () {
-                });
+                mqttClient.publish(topic, vm.currentDevice.name, null, function () {});
             },
             function fail() {}
         );
