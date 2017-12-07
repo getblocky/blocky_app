@@ -28,6 +28,7 @@ import saveProjectMobileTemplate from './save-project-mobile.tpl.html';
 import bottomSheetActionsTemplate from './bottom-sheet-actions.tpl.html';
 import bottomSheetDeviceLogTemplate from './bottom-sheet-device-log.tpl.html';
 import blocklyToolbox from './blockly-toolbox.tpl.html';
+import blocklyWorkspace from './blockly-workspace.tpl.html';
 import renameDeviceTemplate from './rename-device.tpl.html';
 import registerDeviceTemplate from './register-new-device.tpl.html';
 import RegisterNewDeviceController from './register-new-device.controller.js';
@@ -84,6 +85,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     };
     vm.isSidenavOpen = true;
     vm.blocklyToolbox = blocklyToolbox;
+    vm.blocklyWorkspace = blocklyWorkspace;
     vm.xmlText = '';
     vm.scriptId = $stateParams.scriptId;
     vm.localScript = store.get('script');
