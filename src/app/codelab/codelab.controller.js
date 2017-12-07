@@ -273,6 +273,9 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                 }
             });
 
+            Blockly.Xml.domToWorkspace(document.getElementById('workspaceBlocks'),
+                vm.workspace);
+
             var blocklyArea = document.getElementById('main-content');
             if (blocklyArea.offsetHeight) {
                 onResize();
