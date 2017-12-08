@@ -105,12 +105,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     window.addEventListener('resize', onResize, false);
     $scope.$on("$destroy", function () {
         // Save project to local storage
-        if (vm.workspace) {
-            var xml = Blockly.Xml.workspaceToDom(vm.workspace);
-            vm.script.xml = Blockly.Xml.domToText(xml);
-            updatePythonFromBlock();
-        }
-        store.set('script', vm.script);
+        prepareProjectDataAndSaveToLocal();
 
         // Clean up mqtt session
         if (mqttClient) {
@@ -355,6 +350,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
         } else {
             vm.script.mode = 'python';
             vm.script.python = Blockly.Python.workspaceToCode(vm.workspace);
+            store.set('script', vm.script);
         }
     }
 
@@ -370,10 +366,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     function saveProject() {
         $mdDialog.hide();
         if (vm.isUserLoaded) {
-            var xml = Blockly.Xml.workspaceToDom(vm.workspace);
-            vm.script.xml = Blockly.Xml.domToText(xml);
-            updatePythonFromBlock();
-            store.set('script', vm.script);
+            prepareProjectDataAndSaveToLocal();
             if (angular.isUndefined(vm.script.id) || vm.script.id.length === 0) { // New project
                 addProject();
             } else { // Existing project
@@ -434,7 +427,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     function uploadScript(mode) {
         var chipId = vm.currentDevice.chipId;
         var topic = baseSysTopicUrl + '/' + chipId + '/' + mode;
-        updatePythonFromBlock();
+        prepareProjectDataAndSaveToLocal();
         if (vm.script.python.length === 0) {
             return;
         }
@@ -543,11 +536,8 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                 .cancel($translate.instant('action.cancel'))
                 .ok($translate.instant('action.share'));
             $mdDialog.show(confirm).then(function () {
-                    var xml = Blockly.Xml.workspaceToDom(vm.workspace);
                     vm.script.isPublic = 1;
-                    vm.script.xml = Blockly.Xml.domToText(xml);
-                    updatePythonFromBlock();
-                    store.set('script', vm.script);
+                    prepareProjectDataAndSaveToLocal();
                     scriptService.saveScript(vm.script).then(function success() {
                         shareProject();
                     });
@@ -660,7 +650,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     }
 
     function downloadProject() {
-        updatePythonFromBlock();
+        prepareProjectDataAndSaveToLocal();
         exportToPc(vm.script.python, vm.script.name + '.py');
     }
 
@@ -737,9 +727,14 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
         }
     }
 
-    function updatePythonFromBlock() {
+    function prepareProjectDataAndSaveToLocal() {
+        if (vm.workspace) {
+            var xml = Blockly.Xml.workspaceToDom(vm.workspace);
+            vm.script.xml = Blockly.Xml.domToText(xml);
+        }
         if (vm.script.mode === 'block') {
             vm.script.python = Blockly.Python.workspaceToCode(vm.workspace);
         }
+        store.set('script', vm.script);
     }
 }
