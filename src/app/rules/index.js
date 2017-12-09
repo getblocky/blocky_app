@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import 'angular-material-data-table/dist/md-data-table.min.css';
 import './rules.scss';
 
 import uiRouter from 'angular-ui-router';

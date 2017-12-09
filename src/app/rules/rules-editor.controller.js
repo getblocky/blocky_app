@@ -57,7 +57,7 @@ export default function RulesEditorController($log, $stateParams, $state, ruleSe
                     vm.rule.xml = rule.xml || '';
                     vm.rule.triggers = rule.triggers || '';
                     vm.rule.actions = rule.actions || '';
-                    vm.rule.staus = rule.status || 0;
+                    vm.rule.status = rule.status || 0;
 
                     $timeout(function () {
                         injectBlockly(Blockly.Xml.textToDom(vm.rule.xml));

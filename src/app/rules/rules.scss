@@ -32,3 +32,28 @@
         margin-left: 20px;
     }
 }
+
+.md-table {
+    .md-checkbox-column,
+    .md-checkbox-cell {
+        display: none;
+    }
+}
+
+#rules {
+    .md-button {
+        text-transform: unset !important;
+        color: #ffffff;
+    }
+    md-switch {
+        float: right;
+        margin: 0;
+    }
+
+    md-table-container {
+        .md-button {
+            float: right;
+            margin: 0;
+        }
+    }
+}
