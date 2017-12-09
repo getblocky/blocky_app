@@ -444,6 +444,12 @@ export default angular.module('blocky.locale', [])
                 "boolean-value": "Boolean value",
                 "false": "False",
                 "true": "True"
+            },
+            "rules": {
+                "rule-load-failed-error": "Failed to load rule",
+                "rule-save-failed-error": "Failed to save rule",
+                "delete-rule-title": "Are you sure you want to delete the rule '{{ruleName}}'?",
+                "delete-rule-text": "Be careful, after the confirmation the rule and all related data will become unrecoverable.",
             }
         },
     }

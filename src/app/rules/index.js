@@ -19,10 +19,14 @@ import uiRouter from 'angular-ui-router';
 
 import RulesRoutes from './rules.routes';
 import RulesController from './rules.controller';
+import RulesEditorController from './rules-editor.controller';
+import blockyApiRule from '../api/rule.service';
 
 export default angular.module('blocky.rules', [
-        uiRouter
+        uiRouter,
+        blockyApiRule
     ])
     .config(RulesRoutes)
     .controller('RulesController', RulesController)
+    .controller('RulesEditorController', RulesEditorController)
     .name;

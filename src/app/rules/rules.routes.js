@@ -16,6 +16,7 @@
 /* eslint-disable import/no-unresolved, import/default */
 
 import rulesTemplate from './rules.tpl.html';
+import rulesEditorTemplate from './rules-editor.tpl.html';
 
 /* eslint-enable import/no-unresolved, import/default */
 
@@ -35,6 +36,26 @@ export default function RulesRoutes($stateProvider) {
             },
             data: {
                 pageTitle: 'home.rules'
+            }
+        })
+        .state('home.rules.new', {
+            url: '/new',
+            views: {
+                "content@home": {
+                    templateUrl: rulesEditorTemplate,
+                    controllerAs: 'vm',
+                    controller: 'RulesEditorController'
+                }
+            }
+        })
+        .state('home.rules.view', {
+            url: '/:ruleId',
+            views: {
+                "content@home": {
+                    templateUrl: rulesEditorTemplate,
+                    controllerAs: 'vm',
+                    controller: 'RulesEditorController'
+                }
             }
         });
 }

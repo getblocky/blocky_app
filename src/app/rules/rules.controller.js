@@ -19,5 +19,24 @@
 /* eslint-disable no-undef, angular/window-service, angular/document-service */
 
 /*@ngInject*/
-export default function RulesController() {
+export default function RulesController($state, ruleService, userService) {
+    var vm = this;
+
+    vm.isUserLoaded = userService.isAuthenticated();
+    vm.rules = [];
+
+    if (vm.isUserLoaded) {
+        loadUserRules();
+    } else {
+        $state.go('home.rules.new');
+    }
+
+    function loadUserRules() {
+        ruleService.getAllRules().then(function success(rules) {
+            vm.rules = rules;
+            if (!vm.rules.length) {
+                $state.go('home.rules.new');
+            }
+        });
+    }
 }

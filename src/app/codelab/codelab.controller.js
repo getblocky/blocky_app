@@ -37,7 +37,7 @@ import showSharedProjectTemplate from './show-shared-project.tpl.html';
 /* eslint-disable no-undef, angular/window-service, angular/document-service */
 
 /*@ngInject*/
-export default function CodeLabController($mdSidenav, toast, scriptService, userService, deviceService, $translate, $mdDialog, $document, $rootScope, $scope, $stateParams, $state, store, $location, $mdBottomSheet, settings, $timeout, $log) {
+export default function CodeLabController($mdSidenav, toast, scriptService, userService, deviceService, $translate, $mdDialog, $document, $rootScope, $scope, $stateParams, $state, store, $mdBottomSheet, settings, $timeout, $log) {
     var vm = this;
     var mqttClient;
     var authKey = '';
@@ -406,7 +406,9 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
         scriptService.addScript(vm.script).then(
             function success(script) {
                 vm.script.id = script.id;
-                $location.path('/codelab/' + script.id);
+                $state.go('home.codelab.view', {
+                    scriptId: script.id
+                });
             },
             function fail() {
                 toast.showError($translate.instant('script.script-save-failed-error'));
@@ -418,7 +420,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
         vm.script.name = vm.script.name + ' (Duplicated)';
         vm.script.id = '';
         vm.script.isPublic = 0;
-        //$location.path('/codelab/' + script.id);
         store.set('script', vm.script);
         $mdBottomSheet.hide();
         $state.go('home.codelab');
