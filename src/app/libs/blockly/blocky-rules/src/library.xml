@@ -1,0 +1,652 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="factory_base" id="*(CVMCXTP(0-T8#..uKn" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">blocky_trigger_device</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="yo7Ex^DWk[yM6tcfFe)]">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="FO#rUL[(ktI4RV|K2.,H">
+            <field name="TEXT">When device</field>
+            <next>
+              <block type="field_dropdown" id="aP5oKM[7-xmg8lgfyR~.">
+                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+                <field name="FIELDNAME">trigger_device</field>
+                <field name="USER0">registered</field>
+                <field name="CPU0">R</field>
+                <field name="USER1">connected</field>
+                <field name="CPU1">C</field>
+                <field name="USER2">disconnected</field>
+                <field name="CPU2">D</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="fq_rlyKJ=ZFH1BU}q]aQ" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="{0i1VuD}|`;.,?JR/p;S" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="4#U`#w`FDw|+W~|_{%7,"></shadow>
+      <block type="type_other" id="sp:/5]{)c:U#GZ#Z110k">
+        <field name="TYPE">triggers</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="RIC/]gtJj9MN^_d};W?$"></shadow>
+      <block type="type_other" id="b$sOv)2x7g3oTC{7k06I">
+        <field name="TYPE">triggers</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="b{zsfy!4[:2#`cnH2/b[">
+        <mutation colour="#a5745b"></mutation>
+        <field name="HUE">20</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id=")K8Os]lE8hiH]2S+H/qw" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">blocky_trigger_mqtt</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="Aq7w%[w9G]s7Og#3pfRm">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="m6+,dv(ex,b1DFR8w{6c">
+            <field name="TEXT">When receive topic</field>
+            <next>
+              <block type="field_input" id="3U*:h?sdZRdG^hl]!Z*p">
+                <field name="TEXT">topic</field>
+                <field name="FIELDNAME">trigger_topic</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="ue#.kH3(XEfb}hI6%/-O" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="qQ5D^o):,|qN,PZ$qV2y" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="sXdbwT%qD?k8m^,2?8@}"></shadow>
+      <block type="type_other" id="^d}~Y/6._Gsi4wA!F-=?">
+        <field name="TYPE">triggers</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="+-3b+M%3Y`mE3yq3o^sm"></shadow>
+      <block type="type_other" id="Bw-Y(l(k^-4PP1,8Pg|,">
+        <field name="TYPE">triggers</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="M{5^lKu,~bGvqvI!6HMy">
+        <mutation colour="#9fa55b"></mutation>
+        <field name="HUE">65</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Vtc3z)*ngx.l!w2kR5(7" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">blocky_timer_interval</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="%kE$~cyAPgRXzMnEU_@v">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="z3}JUR:%I)u^Z%nJ2]z*">
+            <field name="TEXT">When every</field>
+            <next>
+              <block type="field_number" id="1!o2+H_xJWOwuADzmWH.">
+                <field name="VALUE">0</field>
+                <field name="FIELDNAME">trigger_interval_amount</field>
+                <field name="MIN">1</field>
+                <field name="MAX">Infinity</field>
+                <field name="PRECISION">0</field>
+                <next>
+                  <block type="field_dropdown" id="ydFcFM1do^Gb)xte:S8G">
+                    <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+                    <field name="FIELDNAME">trigger_interval_unit</field>
+                    <field name="USER0">minutes</field>
+                    <field name="CPU0">M</field>
+                    <field name="USER1">hours</field>
+                    <field name="CPU1">H</field>
+                    <field name="USER2">days</field>
+                    <field name="CPU2">D</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="pX;4~D*x[AM6Gim(J:DJ" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="j%JB1NZoI`[}tEnPQcDd" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="5%R|a=4e^;w,=Vcb@YK:"></shadow>
+      <block type="type_other" id="J$muG_?j8u;^N$!5~U3q">
+        <field name="TYPE">triggers</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="_63KD},E~d)a]JUYrZ=t"></shadow>
+      <block type="type_other" id="%}K_JR4qkzXkw~o+kSEc">
+        <field name="TYPE">triggers</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="]_pL{?mVc#?:r.Uuavo;">
+        <mutation colour="#5ba55b"></mutation>
+        <field name="HUE">120</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id=")t4FgTD(e_H;UrH9^[91" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">blocky_trigger_timer_schedule</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="DZ%=ee{G#%Y3%5~6bwc1">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="cIzDQ|F0l{^CjeQiiBGp">
+            <field name="TEXT">When every Sun</field>
+            <next>
+              <block type="field_checkbox" id="0~K_L2C9JqO9W8td%g=8">
+                <field name="CHECKED">TRUE</field>
+                <field name="FIELDNAME">trigger_schedule_day_sun</field>
+                <next>
+                  <block type="field_static" id="wz5O,(;aLEbxA[sQLZEk">
+                    <field name="TEXT">Mon</field>
+                    <next>
+                      <block type="field_checkbox" id="*Tx1$nHmboLZhz_^-6cM">
+                        <field name="CHECKED">TRUE</field>
+                        <field name="FIELDNAME">trigger_schedule_day_mon</field>
+                        <next>
+                          <block type="field_static" id="e?r]}Gh,K36Oj|3Lf)DU">
+                            <field name="TEXT">Tue</field>
+                            <next>
+                              <block type="field_checkbox" id="2PVxz[2/G_Y5:B}A_KYJ">
+                                <field name="CHECKED">TRUE</field>
+                                <field name="FIELDNAME">trigger_schedule_day_tue</field>
+                                <next>
+                                  <block type="field_static" id="o%yq@?odVo!#qM*T]@r~">
+                                    <field name="TEXT">Wed</field>
+                                    <next>
+                                      <block type="field_checkbox" id="mVDUi!4x3Krr1!.gNc?s">
+                                        <field name="CHECKED">TRUE</field>
+                                        <field name="FIELDNAME">trigger_schedule_day_wed</field>
+                                        <next>
+                                          <block type="field_static" id="(-%DT#3ZJK-RMBT34+m/">
+                                            <field name="TEXT">Thu</field>
+                                            <next>
+                                              <block type="field_checkbox" id="xE1Cy@qy+6d6[ngRAI)c">
+                                                <field name="CHECKED">TRUE</field>
+                                                <field name="FIELDNAME">trigger_schedule_day_thu</field>
+                                                <next>
+                                                  <block type="field_static" id="=L}1,=gs76Scrx.gS}$]">
+                                                    <field name="TEXT">Fri</field>
+                                                    <next>
+                                                      <block type="field_checkbox" id="y_W)NDtC}1sZ@LSFl_t,">
+                                                        <field name="CHECKED">TRUE</field>
+                                                        <field name="FIELDNAME">trigger_schedule_day_fri</field>
+                                                        <next>
+                                                          <block type="field_static" id="6X|h(td[$NOp}8$nZlTA">
+                                                            <field name="TEXT">Sat</field>
+                                                            <next>
+                                                              <block type="field_checkbox" id="p!~zZeJF4{`eNQ]Scqef">
+                                                                <field name="CHECKED">TRUE</field>
+                                                                <field name="FIELDNAME">trigger_schedule_day_sat</field>
+                                                                <next>
+                                                                  <block type="field_static" id="Z:JFEd)?0C4Ug,(c,BC3">
+                                                                    <field name="TEXT">at</field>
+                                                                    <next>
+                                                                      <block type="field_input" id="}Y-*JJs{0n^#F.l(xx$S">
+                                                                        <field name="TEXT">HH:MM</field>
+                                                                        <field name="FIELDNAME">trigger_schedule_time</field>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="U}q;~{TR+^jYA4Zv$-9{" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="WYSaL1b)3-7IFJv%E#ad" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r@ko{`Qmb{-q}p3/[u-n"></shadow>
+      <block type="type_other" id="`^@r3vqARxYaS6s8gcit">
+        <field name="TYPE">triggers</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="Eh/u3^.?1bE$IBWyNEfv"></shadow>
+      <block type="type_other" id="Mo.QZG8Hpl?d!~pHNO9s">
+        <field name="TYPE">triggers</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="Gyz4OeHrx}lOpDD`Af^E">
+        <mutation colour="#5ba58c"></mutation>
+        <field name="HUE">160</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="B|w#rI:6onA1hT3Q_V/m" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">blocky_data_mqtt</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id=")kQKQK_KgCK~mp%Eb_^-">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="*5xy!N?Z%oHfe7D6g|(;">
+            <field name="TEXT">get topic</field>
+            <next>
+              <block type="field_input" id="ygjz4Ec8C.arYMOgk0^M">
+                <field name="TEXT">topic</field>
+                <field name="FIELDNAME">data_topic</field>
+                <next>
+                  <block type="field_static" id="Pdyd=iCb:/SMwZPPXvV?">
+                    <field name="TEXT">, save message to</field>
+                    <next>
+                      <block type="field_variable" id="Wolr^2,)G(wF*z@IVOtv">
+                        <field name="TEXT">message</field>
+                        <field name="FIELDNAME">data_message</field>
+                        <next>
+                          <block type="field_static" id="1vywMzdN:J9o|Qpy:BV)">
+                            <field name="TEXT">as</field>
+                            <next>
+                              <block type="field_dropdown" id="a3e;ptu7@(QuDtcu%*_u">
+                                <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+                                <field name="FIELDNAME">data_message_type</field>
+                                <field name="USER0">string</field>
+                                <field name="CPU0">string</field>
+                                <field name="USER1">number</field>
+                                <field name="CPU1">number</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="7$MmVQIDz*Yclo!cH{~b" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="I6Q$Dt`j8II./T4g*9Cy" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="nOmMoH]NW[CrpPagGp]|"></shadow>
+      <block type="type_other" id="vx[QzB~E1(AlYo#o|?$f">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$86-EFB#Pql3xi159Tt["></shadow>
+      <block type="type_other" id="j3so*j7K2xFJ1u7^*F^i">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="`|v`[),d!}-@5I1G93Z#">
+        <mutation colour="#5b80a5"></mutation>
+        <field name="HUE">210</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="~R:TpuItdj+5Ad62`RKe" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">blocky_data_device_state</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="kn6f*cC$_S)8kH!=KME#">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="E$B${rAtwNpniCE!JEp-">
+            <field name="TEXT">is device</field>
+            <next>
+              <block type="field_dropdown" id="%[4xv]=!S?fy]{37ekQj">
+                <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+                <field name="FIELDNAME">data_device_state</field>
+                <field name="USER0">online</field>
+                <field name="CPU0">on</field>
+                <field name="USER1">offline</field>
+                <field name="CPU1">off</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="3#OP;;,3rbNM,LH5m[1)" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="!sc@#;TvtXFTbD]/QiPz" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="P^Tv}By_O~RXUkM_JX,="></shadow>
+      <block type="type_other" id="$R{5zsve~eyY.|k:,MZG">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="BuOhX9t(ZFUi.}NgFBU+">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="om/]Q.t=S|k,N8zXdHo9" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">blocky_action_sms</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="I%aQ_m,+-D,nXMfY#/A`">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="#r6;]:+~uug]wBC?%M4a">
+            <field name="TEXT">Send message</field>
+            <next>
+              <block type="field_input" id="DBC$T//7O6;6%#.EW+[W">
+                <field name="TEXT">message</field>
+                <field name="FIELDNAME">action_sms_message</field>
+                <next>
+                  <block type="field_static" id="-@v:gU/GFFII}tp1Cz%W">
+                    <field name="TEXT">to number</field>
+                    <next>
+                      <block type="field_input" id="_W0sm87M~YWt)|J7y7M=">
+                        <field name="TEXT">number</field>
+                        <field name="FIELDNAME">action_sms_number</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="e5LmOn]#t*;_:uZsHPx," deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="e)V1gYS3|{~28IKWYy.m" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="y~#!|0vnF;Xz=)BIv[Q9"></shadow>
+      <block type="type_other" id="o[.5j,m.SluQV1bI7Xl^">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="x#odWzJX:y?5=U{iRPfW"></shadow>
+      <block type="type_other" id="fhD0W1HPi;^C!e1jt_!T">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="2+P*q#oDT%L,mK~Hp?cy">
+        <mutation colour="#995ba5"></mutation>
+        <field name="HUE">290</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="eA)G~8,bw}+i@L$!0YE/" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">blocky_action_email</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="H}xq%OaSj*|5EyC~aM23">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="u1UJ2qMX;Q9h[cT~r7U4">
+            <field name="TEXT">Send message</field>
+            <next>
+              <block type="field_input" id="150.#7^(TFDW#l^yl?SI">
+                <field name="TEXT">message</field>
+                <field name="FIELDNAME">action_email_message</field>
+                <next>
+                  <block type="field_static" id="rdMeat:Kk29#:|;$/lIX">
+                    <field name="TEXT">to email</field>
+                    <next>
+                      <block type="field_input" id=".D`!iOsVBRA.wL%%e!+J">
+                        <field name="TEXT">email</field>
+                        <field name="FIELDNAME">action_email_email</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="=T66EVmZJ@73e==b[;$u" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="1^pF,@/V*Lq[.+Qicy*_" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="/VVHRM.f+G0E[$l4lX!m"></shadow>
+      <block type="type_other" id="qda|lg((YpeW!ktmv/-P">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id=";U%Q}-P[kcvZ2UK/D;1]"></shadow>
+      <block type="type_other" id="luTa_3|K:sLiBchZ{g4]">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="(1wX:k.fia6q@^x{uP9M">
+        <mutation colour="#a55b80"></mutation>
+        <field name="HUE">330</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="yBzYQ,BH(~Hc__s0I_#X" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">blocky_action_mqtt</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="cP:rb-0TffK^yzD^iTLu">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="]iKAT|7um%$(fR+!6eBE">
+            <field name="TEXT">Send message</field>
+            <next>
+              <block type="field_input" id="hn)][RGjQ+mUg{nkF(al">
+                <field name="TEXT">message</field>
+                <field name="FIELDNAME">action_mqtt_message</field>
+                <next>
+                  <block type="field_static" id="7_op?UN[exOTA]?Z%NXd">
+                    <field name="TEXT">to topic</field>
+                    <next>
+                      <block type="field_input" id="!nDBwA!5*w_u82QuI(~j">
+                        <field name="TEXT">topic</field>
+                        <field name="FIELDNAME">action_mqtt_topic</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="U:1aaP4xnXNlU.|F@bqa" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="J`Y{A=00,Dh5OOhM%GTy" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="rwVuJ9g%O0C*hO~JwViq"></shadow>
+      <block type="type_other" id=",j,_V..G==Y;M]Wt$(y:">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="-*w3/8IGEvy?uY`+8Omu"></shadow>
+      <block type="type_other" id="//wFe4u+YOHW*H()dl{I">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id=";N)S5A_y_J6a0Oa:x?-p">
+        <mutation colour="#a5745b"></mutation>
+        <field name="HUE">20</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Z}h!E%u(-zlwkLFu#/~q" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="NONE"></mutation>
+    <field name="NAME">blocky_triggers_actions</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">NONE</field>
+    <statement name="INPUTS">
+      <block type="input_statement" id="obe~R.BzYdk!xmo.1{Q6">
+        <field name="INPUTNAME">rule_triggers</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="=,^BWV(,pSQQdUjXyY.y">
+            <field name="TEXT">Triggers</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="R,ED!e?(8A;w{*D:|]SR"></shadow>
+          <block type="type_other" id="J(tK`!%HZF%@+b66?(7z">
+            <field name="TYPE">triggers</field>
+          </block>
+        </value>
+        <next>
+          <block type="input_statement" id="[/T]yNREg-5$B##FA],D">
+            <field name="INPUTNAME">rule_actions</field>
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="F#H@i02_)yKom)z.2]Q]">
+                <field name="TEXT">Actions</field>
+              </block>
+            </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="R,ED!e?(8A;w{*D:|]SR"></shadow>
+              <block type="type_other" id="#@]fO}z5|DYg5?Jqs$]D">
+                <field name="TYPE">actions</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="0Zpmv+mpieQyLlUHs*vn" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="8;MJLMKFWO],rQq!^K)c" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="`N+V$B:k@R~m2owM3QQN">
+        <mutation colour="#a55b80"></mutation>
+        <field name="HUE">330</field>
+      </block>
+    </value>
+  </block></xml>

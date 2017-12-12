@@ -361,6 +361,7 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                 onResize();
             }
         });
+        store.set('script', vm.script);
     }
 
     function saveProject() {

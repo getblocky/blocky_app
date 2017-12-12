@@ -27,9 +27,8 @@ export default function RulesController($state, ruleService, userService, $scope
 
     if (vm.isUserLoaded) {
         loadUserRules();
-    } else {
-        $state.go('home.rules.new');
     }
+    
     vm.query = {
         order: '-updatedAt',
         limit: 10,
@@ -77,9 +76,6 @@ export default function RulesController($state, ruleService, userService, $scope
     function loadUserRules() {
         vm.promise = ruleService.getAllRules().then(function success(rules) {
             vm.rules = rules;
-            if (!vm.rules.length) {
-                $state.go('home.rules.new');
-            }
         });
     }
 
