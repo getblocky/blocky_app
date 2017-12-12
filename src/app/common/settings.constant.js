@@ -29,6 +29,6 @@ export default angular.module('blocky.settings', [])
                 host: 'staging.broker.getblocky.com', //'broker.getblocky.com',
                 port: '8883'
             },
-            maxBytesUpload: 900
+            maxBytesUpload: 1024000
         }
     ).name;
