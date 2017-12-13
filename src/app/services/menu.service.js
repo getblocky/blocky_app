@@ -40,6 +40,12 @@ function Menu() {
                 attributeName: 'home.dashboard',
                 state: 'home.dashboard',
                 faIcon: 'fa-th'
+            },
+            {
+                name: 'home.rules',
+                attributeName: 'home.rules',
+                state: 'home.rules',
+                faIcon: 'fa-cogs'
             }
         ];
 

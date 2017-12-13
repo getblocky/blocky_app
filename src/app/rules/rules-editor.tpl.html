@@ -1,0 +1,47 @@
+<!--
+
+    Copyright © 2017 The Blocky Authors
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<div flex layout="row" id="rules">
+    <div flex id="main-content" layout="column">
+        <div ng-include src="vm.blocklyRulesToolbox"></div>
+        <div ng-include src="vm.blocklyRulesWorkspace"></div>
+        <div id="blocklyDiv" style="position: absolute"></div>
+    </div>
+</div>
+
+<div id="footer" layout="row" class="md-whiteframe-4dp">
+    <md-input-container flex="30">
+        <label>Rule Name</label>
+        <input required ng-model="vm.rule.name">
+    </md-input-container>
+    <md-button ng-show="vm.rule.id" ng-click="vm.changeRuleStatus()">
+        <i class="fa" ng-class="vm.rule.status === 1 ? 'fa-pause' : 'fa-play'" aria-hidden="true"></i>
+        <span hide-xs> {{vm.rule.status === 1 ? 'Stop' : 'Run'}}</span>
+    </md-button>
+    <md-button ng-click="vm.saveRule()" ng-disabled="!vm.rule.name">
+        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        <span hide-xs> Save</span>
+    </md-button>
+    <md-button ng-show="vm.rule.id" ng-click="vm.deleteRule($event)">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <span hide-xs> Delete</span>
+    </md-button>
+    <md-button ng-click="vm.newRule()">
+        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+        <span hide-xs> New</span>
+    </md-button>
+</div>

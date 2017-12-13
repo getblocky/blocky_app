@@ -22,7 +22,6 @@
 export default function OpenProjectController($scope, scriptService, $mdDialog, $state) {
     var vm = this;
 
-    vm.removeFilter = removeFilter;
     vm.addItem = addItem;
     vm.openProject = openProject;
     vm.cancel = cancel;
@@ -71,10 +70,6 @@ export default function OpenProjectController($scope, scriptService, $mdDialog, 
 
         return vm.searchData.status;
     };
-
-    function removeFilter() {
-        $scope.filter.show = false;
-    }
 
     function addItem() {
         $state.go('home.codelab.new');

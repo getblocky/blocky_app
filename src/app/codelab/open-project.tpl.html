@@ -26,24 +26,14 @@
     </div>
   </md-toolbar>
 
-  <md-toolbar class="md-table-toolbar md-default" ng-hide="vm.selected.length || filter.show">
+  <md-toolbar class="md-table-toolbar md-default">
     <div class="md-toolbar-tools">
-      <span flex></span>
-      <md-button aria-label="Search" class="md-icon-button" ng-click="filter.show = true">
-        <md-icon>search</md-icon>
-      </md-button>
+      <md-input-container flex style="margin-bottom: 0;">
+        <label>&nbsp;</label>
+        <input ng-model="filter.search" placeholder="{{ 'common.enter-search' | translate }}" />
+      </md-input-container>
       <md-button aria-label="Add Project" class="md-icon-button" ng-click="vm.addItem($event)">
         <md-icon>add</md-icon>
-      </md-button>
-    </div>
-  </md-toolbar>
-
-  <md-toolbar class="md-table-toolbar md-default" ng-show="filter.show && !vm.selected.length">
-    <div class="md-toolbar-tools">
-      <md-icon>search</md-icon>
-      <input flex ng-model="filter.search">
-      <md-button aria-label="Close" class="md-icon-button" ng-click="vm.removeFilter()">
-        <md-icon>close</md-icon>
       </md-button>
     </div>
   </md-toolbar>
@@ -52,8 +42,12 @@
     <table md-table md-row-select multiple="" ng-model="vm.selected" md-progress="promise">
       <thead fix-head md-head md-order="vm.query.order">
         <tr md-row>
-          <th flex md-column md-order-by="name"><span>Name</span></th>
-          <th md-column md-numeric md-order-by="updatedAt" md-desc><span>Updated Date</span></th>
+          <th flex md-column md-order-by="name">
+            <span>Name</span>
+          </th>
+          <th md-column md-numeric md-order-by="updatedAt" md-desc>
+            <span>Updated Date</span>
+          </th>
         </tr>
       </thead>
       <tbody md-body>
