@@ -126,7 +126,9 @@ export default function RulesEditorController($log, $stateParams, $state, ruleSe
 
     function saveRule() {
         var xml = Blockly.Xml.workspaceToDom(vm.workspace);
+        var code = Blockly.JavaScript.workspaceToCode(vm.workspace);
         vm.rule.xml = Blockly.Xml.domToText(xml);
+        $log.log('code:', code);
 
         if (vm.isUserLoaded) {
             if (angular.isUndefined(vm.rule.id) || vm.rule.id.length === 0) { // New rule
