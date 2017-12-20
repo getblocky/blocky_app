@@ -8,17 +8,15 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="FO#rUL[(ktI4RV|K2.,H">
-            <field name="TEXT">When device</field>
+            <field name="TEXT">when a device</field>
             <next>
               <block type="field_dropdown" id="aP5oKM[7-xmg8lgfyR~.">
-                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+                <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
                 <field name="FIELDNAME">trigger_device</field>
-                <field name="USER0">registered</field>
-                <field name="CPU0">R</field>
-                <field name="USER1">connected</field>
-                <field name="CPU1">C</field>
-                <field name="USER2">disconnected</field>
-                <field name="CPU2">D</field>
+                <field name="USER0">connected</field>
+                <field name="CPU0">C</field>
+                <field name="USER1">disconnected</field>
+                <field name="CPU1">D</field>
               </block>
             </next>
           </block>
@@ -63,7 +61,7 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="m6+,dv(ex,b1DFR8w{6c">
-            <field name="TEXT">When receive topic</field>
+            <field name="TEXT">when receive a message from</field>
             <next>
               <block type="field_input" id="3U*:h?sdZRdG^hl]!Z*p">
                 <field name="TEXT">topic</field>
@@ -112,10 +110,10 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="z3}JUR:%I)u^Z%nJ2]z*">
-            <field name="TEXT">When every</field>
+            <field name="TEXT">when every</field>
             <next>
               <block type="field_number" id="1!o2+H_xJWOwuADzmWH.">
-                <field name="VALUE">0</field>
+                <field name="VALUE">30</field>
                 <field name="FIELDNAME">trigger_interval_amount</field>
                 <field name="MIN">1</field>
                 <field name="MAX">Infinity</field>
@@ -176,52 +174,52 @@
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
           <block type="field_static" id="cIzDQ|F0l{^CjeQiiBGp">
-            <field name="TEXT">When every Sun</field>
+            <field name="TEXT">when every Sun</field>
             <next>
               <block type="field_checkbox" id="0~K_L2C9JqO9W8td%g=8">
-                <field name="CHECKED">TRUE</field>
+                <field name="CHECKED">FALSE</field>
                 <field name="FIELDNAME">trigger_schedule_day_sun</field>
                 <next>
                   <block type="field_static" id="wz5O,(;aLEbxA[sQLZEk">
                     <field name="TEXT">Mon</field>
                     <next>
                       <block type="field_checkbox" id="*Tx1$nHmboLZhz_^-6cM">
-                        <field name="CHECKED">TRUE</field>
+                        <field name="CHECKED">FALSE</field>
                         <field name="FIELDNAME">trigger_schedule_day_mon</field>
                         <next>
                           <block type="field_static" id="e?r]}Gh,K36Oj|3Lf)DU">
                             <field name="TEXT">Tue</field>
                             <next>
                               <block type="field_checkbox" id="2PVxz[2/G_Y5:B}A_KYJ">
-                                <field name="CHECKED">TRUE</field>
+                                <field name="CHECKED">FALSE</field>
                                 <field name="FIELDNAME">trigger_schedule_day_tue</field>
                                 <next>
                                   <block type="field_static" id="o%yq@?odVo!#qM*T]@r~">
                                     <field name="TEXT">Wed</field>
                                     <next>
                                       <block type="field_checkbox" id="mVDUi!4x3Krr1!.gNc?s">
-                                        <field name="CHECKED">TRUE</field>
+                                        <field name="CHECKED">FALSE</field>
                                         <field name="FIELDNAME">trigger_schedule_day_wed</field>
                                         <next>
                                           <block type="field_static" id="(-%DT#3ZJK-RMBT34+m/">
                                             <field name="TEXT">Thu</field>
                                             <next>
                                               <block type="field_checkbox" id="xE1Cy@qy+6d6[ngRAI)c">
-                                                <field name="CHECKED">TRUE</field>
+                                                <field name="CHECKED">FALSE</field>
                                                 <field name="FIELDNAME">trigger_schedule_day_thu</field>
                                                 <next>
                                                   <block type="field_static" id="=L}1,=gs76Scrx.gS}$]">
                                                     <field name="TEXT">Fri</field>
                                                     <next>
                                                       <block type="field_checkbox" id="y_W)NDtC}1sZ@LSFl_t,">
-                                                        <field name="CHECKED">TRUE</field>
+                                                        <field name="CHECKED">FALSE</field>
                                                         <field name="FIELDNAME">trigger_schedule_day_fri</field>
                                                         <next>
                                                           <block type="field_static" id="6X|h(td[$NOp}8$nZlTA">
                                                             <field name="TEXT">Sat</field>
                                                             <next>
                                                               <block type="field_checkbox" id="p!~zZeJF4{`eNQ]Scqef">
-                                                                <field name="CHECKED">TRUE</field>
+                                                                <field name="CHECKED">FALSE</field>
                                                                 <field name="FIELDNAME">trigger_schedule_day_sat</field>
                                                                 <next>
                                                                   <block type="field_static" id="Z:JFEd)?0C4Ug,(c,BC3">
@@ -367,143 +365,54 @@
         <field name="HUE">210</field>
       </block>
     </value>
-  </block><block type="factory_base" id="~R:TpuItdj+5Ad62`RKe" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="LEFT"></mutation>
-    <field name="NAME">blocky_data_device_state</field>
-    <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">LEFT</field>
-    <statement name="INPUTS">
-      <block type="input_dummy" id="kn6f*cC$_S)8kH!=KME#">
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_static" id="E$B${rAtwNpniCE!JEp-">
-            <field name="TEXT">is device</field>
-            <next>
-              <block type="field_dropdown" id="%[4xv]=!S?fy]{37ekQj">
-                <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
-                <field name="FIELDNAME">data_device_state</field>
-                <field name="USER0">online</field>
-                <field name="CPU0">on</field>
-                <field name="USER1">offline</field>
-                <field name="CPU1">off</field>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="3#OP;;,3rbNM,LH5m[1)" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="!sc@#;TvtXFTbD]/QiPz" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="OUTPUTTYPE">
-      <shadow type="type_null" id="P^Tv}By_O~RXUkM_JX,="></shadow>
-      <block type="type_other" id="$R{5zsve~eyY.|k:,MZG">
-        <field name="TYPE">actions</field>
-      </block>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id="BuOhX9t(ZFUi.}NgFBU+">
-        <mutation colour="#5b67a5"></mutation>
-        <field name="HUE">230</field>
-      </block>
-    </value>
-  </block><block type="factory_base" id="om/]Q.t=S|k,N8zXdHo9" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="BOTH"></mutation>
-    <field name="NAME">blocky_action_sms</field>
-    <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">BOTH</field>
-    <statement name="INPUTS">
-      <block type="input_dummy" id="I%aQ_m,+-D,nXMfY#/A`">
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_static" id="#r6;]:+~uug]wBC?%M4a">
-            <field name="TEXT">Send message</field>
-            <next>
-              <block type="field_input" id="DBC$T//7O6;6%#.EW+[W">
-                <field name="TEXT">message</field>
-                <field name="FIELDNAME">action_sms_message</field>
-                <next>
-                  <block type="field_static" id="-@v:gU/GFFII}tp1Cz%W">
-                    <field name="TEXT">to number</field>
-                    <next>
-                      <block type="field_input" id="_W0sm87M~YWt)|J7y7M=">
-                        <field name="TEXT">number</field>
-                        <field name="FIELDNAME">action_sms_number</field>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="e5LmOn]#t*;_:uZsHPx," deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="e)V1gYS3|{~28IKWYy.m" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="TOPTYPE">
-      <shadow type="type_null" id="y~#!|0vnF;Xz=)BIv[Q9"></shadow>
-      <block type="type_other" id="o[.5j,m.SluQV1bI7Xl^">
-        <field name="TYPE">actions</field>
-      </block>
-    </value>
-    <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="x#odWzJX:y?5=U{iRPfW"></shadow>
-      <block type="type_other" id="fhD0W1HPi;^C!e1jt_!T">
-        <field name="TYPE">actions</field>
-      </block>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id="2+P*q#oDT%L,mK~Hp?cy">
-        <mutation colour="#995ba5"></mutation>
-        <field name="HUE">290</field>
-      </block>
-    </value>
   </block><block type="factory_base" id="eA)G~8,bw}+i@L$!0YE/" deletable="false" movable="false" x="0" y="0">
     <mutation connections="BOTH"></mutation>
     <field name="NAME">blocky_action_email</field>
-    <field name="INLINE">AUTO</field>
+    <field name="INLINE">EXT</field>
     <field name="CONNECTIONS">BOTH</field>
     <statement name="INPUTS">
-      <block type="input_dummy" id="H}xq%OaSj*|5EyC~aM23">
-        <field name="ALIGN">LEFT</field>
+      <block type="input_value" id="5*(px|aC/6R*hDj*=u;!">
+        <field name="INPUTNAME">action_email_address</field>
+        <field name="ALIGN">RIGHT</field>
         <statement name="FIELDS">
           <block type="field_static" id="u1UJ2qMX;Q9h[cT~r7U4">
-            <field name="TEXT">Send message</field>
+            <field name="TEXT">send email to</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="T|2w!:dvM)mIGrrlobnP"></shadow>
+          <block type="type_string" id=",Xw|el-R3*VUtZLzeD@k"></block>
+        </value>
+        <next>
+          <block type="input_value" id="{-I~-o}!wU4iB2:)9m4;">
+            <field name="INPUTNAME">action_email_subject</field>
+            <field name="ALIGN">RIGHT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="$@vmx$?!|qs(9=e+2]4,">
+                <field name="TEXT">subject</field>
+              </block>
+            </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="^6`e]+BlP!W1L#~*uayU"></shadow>
+              <block type="type_string" id="uQO1;Qn^=,|j#Z[1=E8R"></block>
+            </value>
             <next>
-              <block type="field_input" id="150.#7^(TFDW#l^yl?SI">
-                <field name="TEXT">message</field>
-                <field name="FIELDNAME">action_email_message</field>
-                <next>
-                  <block type="field_static" id="rdMeat:Kk29#:|;$/lIX">
-                    <field name="TEXT">to email</field>
-                    <next>
-                      <block type="field_input" id=".D`!iOsVBRA.wL%%e!+J">
-                        <field name="TEXT">email</field>
-                        <field name="FIELDNAME">action_email_email</field>
-                      </block>
-                    </next>
+              <block type="input_value" id="{sk$Avta{;t0(BIq5e#]">
+                <field name="INPUTNAME">action_email_message</field>
+                <field name="ALIGN">RIGHT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="%AdJ#*Ihg|+];Z}B)h4:">
+                    <field name="TEXT">mesage</field>
                   </block>
-                </next>
+                </statement>
+                <value name="TYPE">
+                  <shadow type="type_null" id="(G3@XYbD*Y~)chZ;m{sB"></shadow>
+                  <block type="type_string" id="JWPi,zeD%J[mDw(ho8}I"></block>
+                </value>
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
     </statement>
     <value name="TOOLTIP">
@@ -540,30 +449,33 @@
     <field name="INLINE">AUTO</field>
     <field name="CONNECTIONS">BOTH</field>
     <statement name="INPUTS">
-      <block type="input_dummy" id="cP:rb-0TffK^yzD^iTLu">
-        <field name="ALIGN">LEFT</field>
+      <block type="input_value" id="Ljt64BJ%q_w#,2-Xy]!J">
+        <field name="INPUTNAME">action_mqtt_topic</field>
+        <field name="ALIGN">RIGHT</field>
         <statement name="FIELDS">
           <block type="field_static" id="]iKAT|7um%$(fR+!6eBE">
-            <field name="TEXT">Send message</field>
-            <next>
-              <block type="field_input" id="hn)][RGjQ+mUg{nkF(al">
-                <field name="TEXT">message</field>
-                <field name="FIELDNAME">action_mqtt_message</field>
-                <next>
-                  <block type="field_static" id="7_op?UN[exOTA]?Z%NXd">
-                    <field name="TEXT">to topic</field>
-                    <next>
-                      <block type="field_input" id="!nDBwA!5*w_u82QuI(~j">
-                        <field name="TEXT">topic</field>
-                        <field name="FIELDNAME">action_mqtt_topic</field>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
+            <field name="TEXT">send message to</field>
           </block>
         </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="brB;1cbM|TgWR4rM,q?+"></shadow>
+          <block type="type_string" id="[BJ/3`yq2}gR5b8K/m,f"></block>
+        </value>
+        <next>
+          <block type="input_value" id=";:#{iewV?pIcxhC2GpIU">
+            <field name="INPUTNAME">action_mqtt_message</field>
+            <field name="ALIGN">RIGHT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="gU?6e6+s[J[ua)AmIBP!">
+                <field name="TEXT">message</field>
+              </block>
+            </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="w}ljqq+.$D,^8F-Sy)D+"></shadow>
+              <block type="type_string" id="@tSo6rHjOA].v{HWHqzA"></block>
+            </value>
+          </block>
+        </next>
       </block>
     </statement>
     <value name="TOOLTIP">
@@ -647,6 +559,60 @@
       <block type="colour_hue" id="`N+V$B:k@R~m2owM3QQN">
         <mutation colour="#a55b80"></mutation>
         <field name="HUE">330</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="B|w#rI:6onA1hT3Q_V/m" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">blocky_data_device_name</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id=")kQKQK_KgCK~mp%Eb_^-">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="*5xy!N?Z%oHfe7D6g|(;">
+            <field name="TEXT">get name of connected/disconnected device,</field>
+            <next>
+              <block type="field_static" id="Pdyd=iCb:/SMwZPPXvV?">
+                <field name="TEXT">save the name to</field>
+                <next>
+                  <block type="field_variable" id="Wolr^2,)G(wF*z@IVOtv">
+                    <field name="TEXT">device_name</field>
+                    <field name="FIELDNAME">data_device_name</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="7$MmVQIDz*Yclo!cH{~b" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="I6Q$Dt`j8II./T4g*9Cy" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="nOmMoH]NW[CrpPagGp]|"></shadow>
+      <block type="type_other" id="vx[QzB~E1(AlYo#o|?$f">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$86-EFB#Pql3xi159Tt["></shadow>
+      <block type="type_other" id="j3so*j7K2xFJ1u7^*F^i">
+        <field name="TYPE">actions</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="`|v`[),d!}-@5I1G93Z#">
+        <mutation colour="#5b80a5"></mutation>
+        <field name="HUE">210</field>
       </block>
     </value>
   </block></xml>

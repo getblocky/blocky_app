@@ -49,7 +49,7 @@ export default function AppRun($rootScope, $injector, $location, $state, $mdDial
                 $state.go('home.codelab');
             }
 
-            if (to.name.indexOf('reset') === -1 && to.name.indexOf('forgot') === -1) {
+            if (to.name.indexOf('reset') === -1 && to.name.indexOf('forgot') === -1 && to.name.indexOf('rules') === -1) {
                 store.set('lastState', to.name);
             }
             

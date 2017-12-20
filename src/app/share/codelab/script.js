@@ -1,4 +1,4 @@
-/* eslint-disable no-undef, angular/window-service, angular/document-service */
+/* eslint-disable */
 
 if (!window.location.origin) {
     window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ?

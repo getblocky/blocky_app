@@ -90,7 +90,6 @@ export default function RulesController($state, ruleService, userService, $scope
     }
 
     function changeRuleStatus(rule) {
-        //rule.status = Number(rule.status);
         ruleService.saveRule(rule);
     }
 
