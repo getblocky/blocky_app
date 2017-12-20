@@ -97,7 +97,7 @@ Blockly.Blocks['blocky_action_email'] = {
     this.appendValueInput("action_email_message")
         .setCheck("String")
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("mesage");
+        .appendField("message");
     this.setInputsInline(false);
     this.setPreviousStatement(true, "actions");
     this.setNextStatement(true, "actions");

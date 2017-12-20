@@ -402,7 +402,7 @@
                 <field name="ALIGN">RIGHT</field>
                 <statement name="FIELDS">
                   <block type="field_static" id="%AdJ#*Ihg|+];Z}B)h4:">
-                    <field name="TEXT">mesage</field>
+                    <field name="TEXT">message</field>
                   </block>
                 </statement>
                 <value name="TYPE">
