@@ -3,7 +3,7 @@
 Blockly.Blocks['blocky_trigger_device'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("when a device")
+        .appendField("when device")
         .appendField(new Blockly.FieldDropdown([["connected","C"], ["disconnected","D"]]), "trigger_device");
     this.setPreviousStatement(true, "triggers");
     this.setNextStatement(true, "triggers");
@@ -16,7 +16,7 @@ Blockly.Blocks['blocky_trigger_device'] = {
 Blockly.Blocks['blocky_trigger_mqtt'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("when receive a message from")
+        .appendField("when receive message from")
         .appendField(new Blockly.FieldTextInput("topic"), "trigger_topic");
     this.setPreviousStatement(true, "triggers");
     this.setNextStatement(true, "triggers");
@@ -70,14 +70,11 @@ Blockly.Blocks['blocky_trigger_timer_schedule'] = {
 Blockly.Blocks['blocky_data_mqtt'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("get topic")
+        .appendField("value of message from topic")
         .appendField(new Blockly.FieldTextInput("topic"), "data_topic")
-        .appendField(", save message to")
-        .appendField(new Blockly.FieldVariable("message"), "data_message")
         .appendField("as")
         .appendField(new Blockly.FieldDropdown([["string","string"], ["number","number"]]), "data_message_type");
-    this.setPreviousStatement(true, "actions");
-    this.setNextStatement(true, "actions");
+    this.setOutput(true, ["String", "Number"]);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -129,10 +126,12 @@ Blockly.Blocks['blocky_triggers_actions'] = {
   init: function() {
     this.appendStatementInput("rule_triggers")
         .setCheck("triggers")
+        .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Triggers");
-    this.appendStatementInput("rule_actions")
-        .setCheck("actions")
-        .appendField("Actions");
+    this.appendValueInput("rule_logic")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Logic");
     this.setColour(330);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -142,12 +141,22 @@ Blockly.Blocks['blocky_triggers_actions'] = {
 Blockly.Blocks['blocky_data_device_name'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("get name of connected/disconnected device,")
-        .appendField("save the name to")
-        .appendField(new Blockly.FieldVariable("device_name"), "data_device_name");
-    this.setPreviousStatement(true, "actions");
-    this.setNextStatement(true, "actions");
+        .appendField("name of device");
+    this.setOutput(true, "String");
     this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['blocky_actions'] = {
+  init: function() {
+    this.appendStatementInput("rule_actions")
+        .setCheck("actions")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("actions");
+    this.setOutput(true, "actions");
+    this.setColour(330);
  this.setTooltip("");
  this.setHelpUrl("");
   }

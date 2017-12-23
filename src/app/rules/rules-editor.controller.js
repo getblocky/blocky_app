@@ -130,6 +130,7 @@ export default function RulesEditorController($log, $stateParams, $state, ruleSe
         var code = Blockly.JavaScript.workspaceToCode(vm.workspace);
         vm.rule.triggers = code.substring(code.lastIndexOf('<blocky_triggers>') + 17, code.lastIndexOf('</blocky_triggers>'));
         vm.rule.actions = code.substring(code.lastIndexOf('<blocky_actions>') + 16, code.lastIndexOf('</blocky_actions>'));
+        $log.log(vm.rule);
         if (vm.isUserLoaded) {
             if (angular.isUndefined(vm.rule.id) || vm.rule.id.length === 0) { // New rule
                 addRule();

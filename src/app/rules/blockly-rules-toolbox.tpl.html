@@ -24,12 +24,9 @@
   <category name="Data" colour="#5ba593">
     <block type="blocky_data_mqtt">
       <field name="data_topic">topic</field>
-      <field name="data_message" id="x5aBV@S{Xh,Yv){{8KkW" variabletype="">message</field>
       <field name="data_message_type">string</field>
     </block>
-    <block type="blocky_data_device_name">
-      <field name="data_device_name" id=",L#bS%})aq9WJQ+MBaOx" variabletype="">device_name</field>
-    </block>
+    <block type="blocky_data_device_name"></block>
   </category>
   <category name="Actions" colour="#6d5ba5">
     <block type="blocky_action_email">
@@ -64,7 +61,6 @@
   </category>
   <sep></sep>
   <category name="Logic" colour="#5C81A6">
-    <block type="controls_if"></block>
     <block type="logic_compare">
       <field name="OP">EQ</field>
     </block>
@@ -76,9 +72,11 @@
       <field name="BOOL">TRUE</field>
     </block>
     <block type="logic_null"></block>
-    <block type="logic_ternary"></block>
   </category>
   <category name="Math" colour="#5C68A6">
+    <block type="math_number">
+      <field name="NUM">0</field>
+    </block>
     <block type="math_arithmetic">
       <field name="OP">ADD</field>
       <value name="A">
@@ -89,14 +87,6 @@
       <value name="B">
         <shadow type="math_number">
           <field name="NUM">1</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="math_round">
-      <field name="OP">ROUND</field>
-      <value name="NUM">
-        <shadow type="math_number">
-          <field name="NUM">3.1</field>
         </shadow>
       </value>
     </block>
@@ -128,8 +118,13 @@
         </shadow>
       </value>
     </block>
-    <block type="math_number">
-      <field name="NUM">0</field>
+    <block type="math_round">
+      <field name="OP">ROUND</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">3.1</field>
+        </shadow>
+      </value>
     </block>
     <block type="math_on_list">
       <mutation op="SUM"></mutation>
@@ -179,25 +174,11 @@
     <block type="math_random_float"></block>
   </category>
   <category name="Text" colour="#5CA68D">
+    <block type="text">
+      <field name="TEXT"></field>
+    </block>
     <block type="text_join">
       <mutation items="2"></mutation>
-    </block>
-    <block type="text_charAt">
-      <mutation at="true"></mutation>
-      <field name="WHERE">FROM_START</field>
-      <value name="VALUE">
-        <block type="variables_get">
-          <field name="VAR" id="f1iB#NG4h9V__e9w$.a-" variabletype="">text</field>
-        </block>
-      </value>
-    </block>
-    <block type="text_append">
-      <field name="VAR" id="`[9+^qO$A.solCWTjpM," variabletype="">item</field>
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT"></field>
-        </shadow>
-      </value>
     </block>
     <block type="text_length">
       <value name="VALUE">
@@ -211,32 +192,6 @@
         <shadow type="text">
           <field name="TEXT"></field>
         </shadow>
-      </value>
-    </block>
-    <block type="text_indexOf">
-      <field name="END">FIRST</field>
-      <value name="VALUE">
-        <block type="variables_get">
-          <field name="VAR" id="f1iB#NG4h9V__e9w$.a-" variabletype="">text</field>
-        </block>
-      </value>
-      <value name="FIND">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="text">
-      <field name="TEXT"></field>
-    </block>
-    <block type="text_getSubstring">
-      <mutation at1="true" at2="true"></mutation>
-      <field name="WHERE1">FROM_START</field>
-      <field name="WHERE2">FROM_START</field>
-      <value name="STRING">
-        <block type="variables_get">
-          <field name="VAR" id="f1iB#NG4h9V__e9w$.a-" variabletype="">text</field>
-        </block>
       </value>
     </block>
     <block type="text_changeCase">
@@ -255,22 +210,5 @@
         </shadow>
       </value>
     </block>
-    <block type="text_print">
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="text_prompt_ext">
-      <mutation type="TEXT"></mutation>
-      <field name="TYPE">TEXT</field>
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
   </category>
-  <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
 </xml>
