@@ -542,9 +542,9 @@
       </block>
     </value>
     <value name="COLOUR">
-      <block type="colour_hue" id="`N+V$B:k@R~m2owM3QQN">
-        <mutation colour="#a55b80"></mutation>
-        <field name="HUE">330</field>
+      <block type="colour_hue" id="7zv%I}}%%$g)?BRT3+JT">
+        <mutation colour="#5b80a5"></mutation>
+        <field name="HUE">210</field>
       </block>
     </value>
   </block><block type="factory_base" id="B|w#rI:6onA1hT3Q_V/m" deletable="false" movable="false" x="0" y="0">
@@ -621,9 +621,9 @@
       </block>
     </value>
     <value name="COLOUR">
-      <block type="colour_hue" id="`N+V$B:k@R~m2owM3QQN">
-        <mutation colour="#a55b80"></mutation>
-        <field name="HUE">330</field>
+      <block type="colour_hue" id="kN@,rlHWU4iVGkxNVAAe">
+        <mutation colour="#5b80a5"></mutation>
+        <field name="HUE">210</field>
       </block>
     </value>
   </block></xml>

@@ -132,7 +132,7 @@ Blockly.Blocks['blocky_triggers_actions'] = {
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Logic");
-    this.setColour(330);
+    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -156,7 +156,7 @@ Blockly.Blocks['blocky_actions'] = {
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("actions");
     this.setOutput(true, "actions");
-    this.setColour(330);
+    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
