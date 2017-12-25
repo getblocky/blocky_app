@@ -47,9 +47,9 @@ Blockly.JavaScript['blocky_data_mqtt'] = function (block) {
   var dropdown_data_message_type = block.getFieldValue('data_message_type');
   var code = '';
   if (dropdown_data_message_type == 'number') {
-    code = 'Number("{{blocky_data_mqtt|' + text_data_topic + '}}")';
+    code = 'Number({{blocky_data_mqtt|' + text_data_topic + '}})';
   } else {
-    code = 'String("{{blocky_data_mqtt|' + text_data_topic + '}}")';
+    code = 'String({{blocky_data_mqtt|' + text_data_topic + '}})';
   }
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
