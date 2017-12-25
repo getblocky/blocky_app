@@ -364,7 +364,7 @@ export default function DashboardController($scope, userService, dashboardServic
             } catch (err) {
                 $log.log('Exception:', err.message);
             }
-
+            
             initDashboardData(data.data);
             initDashboardWithoutData();
         });
@@ -518,7 +518,8 @@ export default function DashboardController($scope, userService, dashboardServic
                 bgColor: '#e91e63',
                 publishMessage: {
                     topic: '',
-                    message: ''
+                    message: '',
+                    dataType: '1'
                 },
                 cols: 2,
                 rows: 2,
@@ -644,6 +645,7 @@ export default function DashboardController($scope, userService, dashboardServic
                 displayColor: {},
                 subscribeMessage: {
                     topic: '',
+                    dataType: '1'
                 },
                 cols: 2,
                 rows: 2,
@@ -738,6 +740,7 @@ export default function DashboardController($scope, userService, dashboardServic
                 subscribeMessage: {
                     topic: '',
                     message: '',
+                    dataType: '1'
                 },
                 cols: 2,
                 rows: 2,
