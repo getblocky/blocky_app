@@ -1,20 +1,29 @@
 <xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks" style="display:none">
   <variables></variables>
-  <block type="blocky_triggers_actions" id="I~cVRw?P97F@qyxQk21%" x="13" y="13" deletable="false">
-    <value name="rule_logic">
-      <block type="logic_ternary" id="OL1vk;0e3Z+?3j7Sn_iD" deletable="false" movable="false">
-        <value name="IF">
-          <block type="logic_compare" id="uldRWkUSf(3EP1$:s80-">
-            <field name="OP">EQ</field>
-          </block>
-        </value>
-        <value name="THEN">
-          <block type="blocky_actions" id="Bq/H`O`a^.#X[J/!BuXE" deletable="false" movable="false"></block>
-        </value>
-        <value name="ELSE">
-          <block type="blocky_actions" id="e#,dH.i|R`2)JYyVaG+N" deletable="false" movable="false"></block>
-        </value>
+  <block type="blocky_triggers" id="ZC+it}|V])yVycc7_gPR" x="13" y="13" deletable="false">
+    <value name="rule_triggers">
+      <block type="lists_create_with" id=";wf0U:1ZwJY4O5Wif|dM" deletable="false" movable="false">
+        <mutation items="2"></mutation>
       </block>
     </value>
+    <next>
+      <block type="blocky_logic" id="cuMtRUX!cxs.hgrsves=" deletable="false" movable="false">
+        <value name="rule_logic">
+          <block type="logic_ternary" id="xeMIq[xlBX*o{@O%%NUa" deletable="false" movable="false">
+            <value name="IF">
+              <block type="logic_compare" id="2{y#y5$q=9VZd::r9coy">
+                <field name="OP">EQ</field>
+              </block>
+            </value>
+            <value name="THEN">
+              <block type="blocky_actions" id="!RBWl;;NUSHibpv)!z[y" deletable="false" movable="false"></block>
+            </value>
+            <value name="ELSE">
+              <block type="blocky_actions" id="7oYYv(n^y,(%~5of2XqP" deletable="false" movable="false"></block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
   </block>
 </xml>
