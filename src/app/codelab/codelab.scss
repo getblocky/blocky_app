@@ -183,3 +183,154 @@ md-bottom-sheet {
     }
   }
 }
+
+/* Customize toolbox */
+.blocklyTreeRow {
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+}
+
+.blocklyTreeLabel {
+  @media (max-width: $layout-breakpoint-xs) {
+    display: none;
+  }
+}
+
+.blocklyTreeIcon {
+  font-size: 1.5rem;
+  margin-left: 5px;
+  margin-right: 12px;
+}
+
+.blocklyTreeSelected {
+  .blocklyTreeIcon.blocklyTreeIconNone:before {
+    color: #ffffff !important;
+  }
+  .blocklyTreeIcon {
+    &.blocklyTreeIconClosedLtr, &.blocklyTreeIconOpen {
+      margin-right: unset;
+    }
+  }
+}
+
+.blocklyTreeIcon:before {
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+}
+
+/* Logic */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(1) > .blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f074";
+  color: rgb(92, 129, 166);
+}
+
+/* Loops */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(2) > .blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f01e";
+  color: rgb(92, 166, 92);
+}
+
+/* Math */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(3) > .blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f1ec";
+  color: rgb(92, 104, 166);
+}
+
+/* Text */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(4) > .blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f031";
+  color: rgb(92, 166, 141);
+}
+
+/* Color */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(5) > .blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f1fc";
+  color: rgb(128, 91, 165);
+}
+
+/* Timer */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(6) > .blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f017";
+  color: rgb(165, 91, 91);
+}
+
+/* Message */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(7) > .blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f0e6";
+  color: rgb(91, 165, 165);
+}
+
+
+/* Variables */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(8) > .blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f27d";
+  color: rgb(166, 92, 129);
+}
+
+/* Functions */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(9) > .blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f09a";
+  color: rgb(154, 92, 166);
+}
+
+/* Category */
+.blocklyTreeIcon.undefined.undefined {
+  display: none;
+}
+
+.blocklyTreeIconClosedLtr, .blocklyTreeIconOpen {
+  background-image: unset;
+  margin-right: 15px !important;
+}
+
+.blocklyTreeRow {
+  padding-left: 0 !important;
+}
+
+/* --- Input --- */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(11) > div.blocklyTreeRow {
+  .blocklyTreeIconClosedLtr, .blocklyTreeIconOpen {
+    &:before {
+      content: "\f192";
+      margin-left: 2px;
+    }
+  }
+}
+
+/* Button */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(11) > div:nth-child(2) > div:nth-child(1) > div.blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f111";
+  color: rgb(91, 165, 165);
+  margin-left: 2px;
+}
+
+
+/* Light */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(11) > div:nth-child(2) > div:nth-child(2) > div.blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f0eb";
+  color: rgb(91, 165, 165);
+  margin-left: 5px;
+}
+
+/* Temperature */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(11) > div:nth-child(2) > div:nth-child(3) > div.blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f2c9";
+  color: rgb(91, 165, 165);
+  margin-left: 5px;
+}
+
+/* Soil Moisture */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(11) > div:nth-child(2) > div:nth-child(4) > div.blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f043";
+  color: rgb(91, 165, 165);
+  margin-left: 5px;
+}
+
+/* Sound Sensor */
+#blocklyDiv > div > div > div > div:nth-child(2) > div:nth-child(11) > div:nth-child(2) > div:nth-child(5) > div.blocklyTreeRow > .blocklyTreeIcon:before {
+  content: "\f027";
+  color: rgb(91, 165, 165);
+  margin-left: 5px;
+}
