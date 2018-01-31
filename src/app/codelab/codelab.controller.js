@@ -174,9 +174,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                             } else if (message.event === 'ota_ack') {
                                 vm.isUploadSuccess = true;
                                 toast.showSuccess($translate.instant('script.script-upload-success'));
-                            } else if (message.event === 'run_ack') {
-                                vm.isUploadSuccess = true;
-                                toast.showSuccess($translate.instant('script.script-upload-success'));
                             }
                         }
                     } catch (err) {

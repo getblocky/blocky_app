@@ -65,7 +65,6 @@ export default angular.module('blocky.locale', [])
                 "decline-changes": "Decline changes",
                 "close": "Close",
                 "back": "Back",
-                "run": "Run",
                 "sign-in": "Sign in!",
                 "edit": "Edit",
                 "view": "View",
