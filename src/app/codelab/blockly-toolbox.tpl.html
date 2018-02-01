@@ -22,7 +22,6 @@
     <block type="logic_ternary"></block>
   </category>
   <category name="Loops" colour="#5CA65C">
-    <block type="main_block" deletable="false"></block>
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
@@ -255,7 +254,75 @@
       </value>
     </block>
   </category>
-  <category name="Colour" colour="#805ba5">
+  <category name="List" colour="#805ba5">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_create_with">
+      <mutation items="3"></mutation>
+    </block>
+    <block type="lists_repeat">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">5</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="]W;Bl9JT?26_-f^;Q7Xg" variabletype="">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getIndex">
+      <mutation statement="false" at="true"></mutation>
+      <field name="MODE">GET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="]W;Bl9JT?26_-f^;Q7Xg" variabletype="">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <mutation at="true"></mutation>
+      <field name="MODE">SET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="]W;Bl9JT?26_-f^;Q7Xg" variabletype="">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="]W;Bl9JT?26_-f^;Q7Xg" variabletype="">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_split">
+      <mutation mode="SPLIT"></mutation>
+      <field name="MODE">SPLIT</field>
+      <value name="DELIM">
+        <shadow type="text">
+          <field name="TEXT">,</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_sort">
+      <field name="TYPE">NUMERIC</field>
+      <field name="DIRECTION">1</field>
+    </block>
+  </category>
+  <category name="Colour" colour="#a55b5b">
     <block type="colour_picker">
       <field name="COLOUR">#ff0000</field>
     </block>
@@ -295,7 +362,7 @@
       </value>
     </block>
   </category>
-  <category name="Time" colour="#a55b5b">
+  <category name="Time" colour="#a55Ba0">
     <block type="time_sleep">
       <field name="DURATION">mil</field>
       <value name="time">
@@ -321,7 +388,7 @@
       </value>
     </block>
   </category>
-  <category name="Message" colour="#5ba5a5">
+  <category name="Message" colour="#78a55b">
     <block type="message_send_message">
       <value name="TOPIC">
         <block type="text">
@@ -354,8 +421,26 @@
   <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
   <category name="Functions" colour="#9A5CA6" custom="PROCEDURE"></category>
   <sep></sep>
+  <category name="Pins " colour="#5B96A5">
+    <block type="pin_setup">
+      <field name="NAME" id="o]#y6C|*-RLp3]%,|loB" variabletype="">pin</field>
+      <field name="PIN">0</field>
+      <field name="MODE">DIGITAL_INPUT</field>
+    </block>
+    <block type="pin_set_value">
+      <field name="NAME" id="o]#y6C|*-RLp3]%,|loB" variabletype="">pin</field>
+      <value name="NAME">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+    <block type="pin_read_value">
+      <field name="NAME" id="o]#y6C|*-RLp3]%,|loB" variabletype="">pin</field>
+    </block>
+  </category>
   <category name="Input">
-    <category name="Button" colour="#5ba5a5">
+    <category name="Button" colour="#A55B5B">
       <block type="button_setup">
         <field name="NAME" id="r%,WG8jzwamQIO4cr5?t" variabletype="">button</field>
         <field name="PORT">D1</field>
@@ -364,7 +449,7 @@
         <field name="BUTTON" id="r%,WG8jzwamQIO4cr5?t" variabletype="">button</field>
       </block>
     </category>
-    <category name="Light" colour="#5ba5a5">
+    <category name="Light" colour="#A0A55B">
       <block type="light_setup_photocell">
         <field name="NAME" id="u1he{CkAvhNA*;vic7d_" variabletype="">light</field>
         <field name="PORT">A1</field>
@@ -380,7 +465,7 @@
         <field name="NAME" id="u1he{CkAvhNA*;vic7d_" variabletype="">light</field>
       </block>
     </category>
-    <category name="Temperature" colour="#5ba5a5">
+    <category name="Temperature" colour="#965ba5">
       <block type="dht_setup">
         <field name="NAME" id="5Iom8N|b+f`Cy8.L-wt9" variabletype="">dht</field>
         <field name="DHT">dht11</field>
@@ -404,7 +489,7 @@
         <field name="NAME" id="PXgJ)oI~xM_=wow67e|%" variabletype="">ds18b20</field>
       </block>
     </category>
-    <category name="Soil Moisture" colour="#5ba5a5">
+    <category name="Soil Moisture" colour="#65A55B">
       <block type="moisture_setup">
         <field name="NAME" id="P.0QUg$;KXt!P7q6m7gT" variabletype="">moisture</field>
         <field name="PORT">A1</field>
@@ -413,7 +498,7 @@
         <field name="NAME" id="P.0QUg$;KXt!P7q6m7gT" variabletype="">moisture</field>
       </block>
     </category>
-    <category name="Sound Sensor" colour="#5ba5a5">
+    <category name="Sound Sensor" colour="#825BA5">
       <block type="sound_sensor_setup">
         <field name="NAME" id="P.1QUg$;KXt!P7q6m7gT" variabletype="">sound</field>
         <field name="PORT">A1</field>
@@ -422,7 +507,7 @@
         <field name="NAME" id="P.1QUg$;KXt!P7q6m7gT" variabletype="">sound</field>
       </block>
     </category>
-    <category name="Rotary Angle" colour="#5ba5a5">
+    <category name="Rotary Angle" colour="#5B5BA5">
       <block type="rotary_angle_setup">
         <field name="NAME" id="P.2QUg$;KXt!P7q6m7gT" variabletype="">rotary</field>
         <field name="PORT">A1</field>
@@ -431,7 +516,7 @@
         <field name="NAME" id="P.2QUg$;KXt!P7q6m7gT" variabletype="">rotary</field>
       </block>
     </category>
-    <category name="Ultrasonic Sensor" colour="#5ba5a5">
+    <category name="Ultrasonic Sensor" colour="#A55B78">
       <block type="ultrasonic_setup">
         <field name="NAME" id="P.3QUg$;KXt!P7q6m7gT" variabletype="">ultrasonic</field>
         <field name="PORT">D1</field>
@@ -440,7 +525,7 @@
         <field name="NAME" id="P.3QUg$;KXt!P7q6m7gT" variabletype="">ultrasonic</field>
       </block>
     </category>
-    <category name="Motion Sensor" colour="#5ba5a5">
+    <category name="Motion Sensor" colour="#5BA578">
       <block type="motion_setup">
         <field name="NAME" id=":d_sS5e]NAYC~R%-C|O5" variabletype="">pir</field>
         <field name="PORT">D1</field>
@@ -449,10 +534,7 @@
         <field name="NAME" id=":d_sS5e]NAYC~R%-C|O5" variabletype="">pir</field>
       </block>
     </category>
-    <category name="Gas Sensor" colour="#5ba5a5">
-      <block type="gas_sensor"></block>
-    </category>
-    <category name="Touch Sensor" colour="#5ba5a5">
+    <category name="Touch Sensor" colour="#A55B8C">
       <block type="touch_setup">
         <field name="NAME" id="g+eeND~n2thi!L:+uJf;" variabletype="">touch</field>
         <field name="PORT">D1</field>
@@ -463,7 +545,7 @@
     </category>
   </category>
   <category name="Control">
-    <category name="LED" colour="#93a55b">
+    <category name="LED" colour="#a5965b">
       <block type="led_setup">
         <field name="NAME" id="PJ)VL+3H*)T*]BU]Pu)O" variabletype="">led</field>
         <field name="PORT">D1</field>
@@ -477,7 +559,7 @@
         </value>
       </block>
     </category>
-    <category name="Buzzer" colour="#a55b5b">
+    <category name="Buzzer" colour="#a56f5b">
       <block type="buzzer_setup">
         <field name="NAME" id="dwni@;/Z*I,wYYoI%cFP" variabletype="">buzzer</field>
         <field name="PORT">D1</field>
@@ -491,7 +573,7 @@
         </value>
       </block>
     </category>
-    <category name="Relay" colour="#a55b5b">
+    <category name="Relay" colour="#5b6fa5">
       <block type="relay_setup">
         <field name="NAME" id="Qpstyu#@,^q:*e}UHlD`" variabletype="">relay</field>
         <field name="PORT">D1</field>
@@ -505,7 +587,7 @@
         </value>
       </block>
     </category>
-    <category name="Mosfet" colour="#a55b5b">
+    <category name="Mosfet" colour="#5ba565">
       <block type="mosfet_setup">
         <field name="NAME" id="H}f%CKS[!VX,:m}prBVS" variabletype="">mosfet</field>
         <field name="PORT">D1</field>
@@ -519,7 +601,7 @@
         </value>
       </block>
     </category>
-    <category name="Servo" colour="#a55b5b">
+    <category name="Servo" colour="#6f5ba5">
       <block type="servo_setup">
         <field name="NAME" id="Zo{}BpRF*~IoV`_m==XU" variabletype="">servo</field>
         <field name="PORT">D1</field>
@@ -537,7 +619,7 @@
         </value>
       </block>
     </category>
-    <category name="PWM">
+    <category name="PWM" colour="#5b82a5">
       <block type="pwm_setup">
         <field name="NAME" id="PLliM=2Wp]uM^WxOMd}3" variabletype="">pwm</field>
         <field name="PORT">D1</field>
@@ -572,7 +654,7 @@
     <category name="Music" colour="#a55b5b"></category>
   </category>
   <category name="Display">
-    <category name="NeoPixel" colour="#93a55b">
+    <category name="NeoPixel" colour="#5ba5a0">
       <block type="neopixel_setup">
         <field name="NAME" id="k+Gu}o*:,P^;=~vFB)Ef" variabletype="">neopixel</field>
         <field name="PORT">D1</field>
@@ -649,7 +731,7 @@
         </value>
       </block>
     </category>
-    <category name="OLED LCD" colour="#93a55b">
+    <category name="OLED LCD" colour="#a5825b">
       <block type="oled_setup">
         <field name="NAME" id="|GsExAPZA/IVSD7O$q@1" variabletype="">oled</field>
         <field name="PORT">D1</field>
@@ -698,95 +780,6 @@
   <category name="Communication">
     <category name="Bluetooth" colour="#805ba5"></category>
     <category name="LORA" colour="#805ba5"></category>
-  </category>
-  <sep></sep>
-  <category name="Advanced">
-    <category name="Pins " colour="#805ba5">
-      <block type="pin_setup">
-        <field name="NAME" id="o]#y6C|*-RLp3]%,|loB" variabletype="">pin</field>
-        <field name="PIN">0</field>
-        <field name="MODE">DIGITAL_INPUT</field>
-      </block>
-      <block type="pin_set_value">
-        <field name="NAME" id="o]#y6C|*-RLp3]%,|loB" variabletype="">pin</field>
-        <value name="NAME">
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-      </block>
-      <block type="pin_read_value">
-        <field name="NAME" id="o]#y6C|*-RLp3]%,|loB" variabletype="">pin</field>
-      </block>
-    </category>
-    <category name="List" colour="#805ba5">
-      <block type="lists_create_with">
-        <mutation items="0"></mutation>
-      </block>
-      <block type="lists_create_with">
-        <mutation items="3"></mutation>
-      </block>
-      <block type="lists_repeat">
-        <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">5</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="lists_length"></block>
-      <block type="lists_isEmpty"></block>
-      <block type="lists_indexOf">
-        <field name="END">FIRST</field>
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR" id="]W;Bl9JT?26_-f^;Q7Xg" variabletype="">list</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_getIndex">
-        <mutation statement="false" at="true"></mutation>
-        <field name="MODE">GET</field>
-        <field name="WHERE">FROM_START</field>
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR" id="]W;Bl9JT?26_-f^;Q7Xg" variabletype="">list</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_setIndex">
-        <mutation at="true"></mutation>
-        <field name="MODE">SET</field>
-        <field name="WHERE">FROM_START</field>
-        <value name="LIST">
-          <block type="variables_get">
-            <field name="VAR" id="]W;Bl9JT?26_-f^;Q7Xg" variabletype="">list</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_getSublist">
-        <mutation at1="true" at2="true"></mutation>
-        <field name="WHERE1">FROM_START</field>
-        <field name="WHERE2">FROM_START</field>
-        <value name="LIST">
-          <block type="variables_get">
-            <field name="VAR" id="]W;Bl9JT?26_-f^;Q7Xg" variabletype="">list</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_split">
-        <mutation mode="SPLIT"></mutation>
-        <field name="MODE">SPLIT</field>
-        <value name="DELIM">
-          <shadow type="text">
-            <field name="TEXT">,</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="lists_sort">
-        <field name="TYPE">NUMERIC</field>
-        <field name="DIRECTION">1</field>
-      </block>
-    </category>
   </category>
   <sep></sep>
   <category name="Services">
