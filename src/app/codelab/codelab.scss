@@ -509,3 +509,24 @@ md-bottom-sheet {
   content: "\f1c0";
   color: rgb(128, 91, 165);
 }
+
+/* Indent child categories */
+#\3a d > div:nth-child(2) {
+  margin-left: 20px;
+}
+
+#\3a n > div:nth-child(2) {
+  margin-left: 20px;
+}
+
+#\3a v > div:nth-child(2) {
+  margin-left: 20px;
+}
+
+#\3a z > div:nth-child(2) {
+  margin-left: 20px;
+}
+
+#\3a 13 > div:nth-child(2) {
+  margin-left: 20px;
+}
