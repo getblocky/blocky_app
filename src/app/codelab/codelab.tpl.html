@@ -42,7 +42,7 @@
                 </md-select>
 
                 <md-menu md-position-mode="target-right target">
-                    <md-button ng-disabled="!vm.isUserLoaded" class="md-icon-button" aria-label="Device Menu" ng-click="$mdOpenMenu($event)">
+                    <md-button ng-disabled="!vm.isUserLoaded || !vm.currentDevice" class="md-icon-button" aria-label="Device Menu" ng-click="$mdOpenMenu($event)">
                         <md-tooltip md-direction="bottom">
                             Device Settings
                         </md-tooltip>
@@ -59,12 +59,6 @@
                             <md-button ng-click="vm.deleteDevice()">
                                 <md-icon md-menu-align-target aria-label="Delete Device" class="material-icons">delete</md-icon>
                                 <span translate>Delete Device</span>
-                            </md-button>
-                        </md-menu-item>
-                        <md-menu-item>
-                            <md-button ng-click="vm.addDevice($event)">
-                                <md-icon md-menu-align-target aria-label="Setup device" class="material-icons">add</md-icon>
-                                <span translate>Setup device</span>
                             </md-button>
                         </md-menu-item>
                     </md-menu-content>

@@ -30,8 +30,6 @@ import bottomSheetDeviceLogTemplate from './bottom-sheet-device-log.tpl.html';
 import blocklyToolbox from './blockly-toolbox.tpl.html';
 import blocklyWorkspace from './blockly-workspace.tpl.html';
 import renameDeviceTemplate from './rename-device.tpl.html';
-import registerDeviceTemplate from './register-new-device.tpl.html';
-import RegisterNewDeviceController from './register-new-device.controller.js';
 import showSharedProjectTemplate from './show-shared-project.tpl.html';
 
 /* eslint-disable no-undef, angular/window-service, angular/document-service */
@@ -135,7 +133,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     vm.renameDevice = renameDevice;
     vm.saveDevice = saveDevice;
     vm.deleteDevice = deleteDevice;
-    vm.addDevice = addDevice;
     vm.clearDeviceLog = clearDeviceLog;
     vm.duplicateProject = duplicateProject;
 
@@ -622,19 +619,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
             function () {});
     }
 
-    function addDevice($event) {
-        $mdBottomSheet.hide();
-        $mdDialog.show({
-                controller: RegisterNewDeviceController,
-                controllerAs: 'vm',
-                templateUrl: registerDeviceTemplate,
-                parent: angular.element($document[0].body),
-                fullscreen: true,
-                targetEvent: $event
-            })
-            .then(function () {}, function () {});
-
-    }
 
     function saveDevice() {
         deviceService.saveDevice(vm.currentDevice).then(

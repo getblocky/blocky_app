@@ -287,7 +287,6 @@ export default angular.module('blocky.locale', [])
                 "no-boards-text": "No boards found",
                 "device-details": "Device details",
                 "details": "Details",
-                "register-new-device": "Setup device"
             },
             "script": {
                 "scripts": "Scripts",

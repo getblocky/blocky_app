@@ -171,19 +171,6 @@ md-bottom-sheet {
   }
 }
 
-#register-new-device {
-  width: 550px;
-  @media (min-width: $layout-breakpoint-sm) {
-    min-height: 660px;
-    overflow: hidden;
-  }
-  h6 {
-    @media (max-width: $layout-breakpoint-xs) {
-      margin: 0;
-    }
-  }
-}
-
 /* Customize toolbox */
 .blocklyTreeRow {
   height: 40px;
