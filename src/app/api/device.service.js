@@ -19,12 +19,6 @@ export default angular.module('blocky.api.device', [])
 /*@ngInject*/
 function DeviceService($http, $q, $rootScope, $filter, settings) {
 
-    var allDevices = undefined;
-
-    $rootScope.deviceServiceStateChangeStartHandle = $rootScope.$on('$stateChangeStart', function () {
-        invalidateDevicesCache();
-    });
-
     var service = {
         getAllDevices: getAllDevices,
         getDevice: getDevice,
@@ -36,37 +30,15 @@ function DeviceService($http, $q, $rootScope, $filter, settings) {
 
     return service;
 
-    function invalidateDevicesCache() {
-        allDevices = undefined;
-    }
-
-    function loadDevicesCache() {
-        var deferred = $q.defer();
-        if (!allDevices) {
-            var url = settings.baseApiUrl + '/devices';
-            $http.get(url, null).then(function success(response) {
-                allDevices = response.data;
-                deferred.resolve();
-            }, function fail() {
-                deferred.reject();
-            });
-        } else {
-            deferred.resolve();
-        }
-        return deferred.promise;
-    }
-
     function getAllDevices() {
         var deferred = $q.defer();
 
-        loadDevicesCache().then(
-            function success() {
-                deferred.resolve(allDevices);
-            },
-            function fail() {
-                deferred.reject();
-            }
-        );
+        var url = settings.baseApiUrl + '/devices';
+        $http.get(url, null).then(function success(response) {
+            deferred.resolve(response.data);
+        }, function fail() {
+            deferred.reject();
+        });
         return deferred.promise;
     }
 
@@ -85,7 +57,6 @@ function DeviceService($http, $q, $rootScope, $filter, settings) {
         var deferred = $q.defer();
         var url = settings.baseApiUrl + '/devices/' + device.id;
         $http.put(url, device).then(function success(response) {
-            invalidateDevicesCache();
             deferred.resolve(response.data);
         }, function fail(response) {
             deferred.reject(response.data);
@@ -97,7 +68,6 @@ function DeviceService($http, $q, $rootScope, $filter, settings) {
         var deferred = $q.defer();
         var url = settings.baseApiUrl + '/devices/' + deviceId;
         $http.delete(url).then(function success() {
-            invalidateDevicesCache();
             deferred.resolve();
         }, function fail(response) {
             deferred.reject(response.data);

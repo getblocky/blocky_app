@@ -163,11 +163,13 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
                         } else {
                             message = angular.fromJson(message.toString());
                             if (message.event === 'register') {
-                                chipId = message.chipId;
-                                updateDeviceStatusByChipId(chipId, 1);
+                                vm.currentDevice = undefined;
+                                loadUserDevices();
+                                toast.showSuccess('Device ' + message.name + ' has come online');
                             } else if (message.event === 'offline') {
-                                chipId = message.chipId;
-                                updateDeviceStatusByChipId(chipId, 0);
+                                vm.currentDevice = undefined;
+                                loadUserDevices();
+                                toast.showError('Device ' + message.name + ' just went offline');
                             } else if (message.event === 'ota_ack') {
                                 vm.isUploadSuccess = true;
                                 toast.showSuccess($translate.instant('script.script-upload-success'));
@@ -201,25 +203,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
             );
         } else if (vm.localScript) {
             vm.script = vm.localScript;
-        }
-    }
-
-    function updateDeviceStatusByChipId(chipId, status) {
-        vm.currentDevice = undefined;
-        loadUserDevices();
-        for (var i = 0; i < vm.devices.length; i++) {
-            if (chipId.toString() === vm.devices[i].chipId.toString()) {
-                vm.devices[i].status = status;
-                if (status) {
-                    toast.showSuccess('Device ' + vm.devices[i].name + ' has come online');
-                } else {
-                    toast.showError('Device ' + vm.devices[i].name + ' just went offline');
-                }
-                $timeout(function () {
-                    loadSelectedDevice();
-                }, 1000);
-                return;
-            }
         }
     }
 
@@ -287,6 +270,10 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
 
     function loadUserDevices() {
         deviceService.getAllDevices().then(function success(devices) {
+            mqttClient.unsubscribe(baseSysTopicUrl);
+            mqttClient.subscribe(baseSysTopicUrl, {
+                qos: 2
+            });
             if (devices.length) {
                 vm.devices = devices;
                 loadSelectedDevice();
@@ -307,11 +294,6 @@ export default function CodeLabController($mdSidenav, toast, scriptService, user
     }
 
     function subscribeDeviceTopics() {
-        mqttClient.unsubscribe(baseSysTopicUrl);
-        mqttClient.subscribe(baseSysTopicUrl, {
-            qos: 2
-        });
-
         var chipId = '';
         if (mqttClient && mqttClient.connected) {
             for (var i = 0; i < vm.devices.length; i++) {
