@@ -987,9 +987,11 @@ export default function DashboardController($scope, userService, dashboardServic
     }
 
     function initDashboardWithoutData() {
-        for (var i = 0; i < vm.currentDashboard.content.length; i++) {
-            if (vm.currentDashboard.content[i].type === 'joystick') {
-                initJoystick(vm.currentDashboard.content[i]);
+        if (vm.currentDashboard) {
+            for (var i = 0; i < vm.currentDashboard.content.length; i++) {
+                if (vm.currentDashboard.content[i].type === 'joystick') {
+                    initJoystick(vm.currentDashboard.content[i]);
+                }
             }
         }
     }
