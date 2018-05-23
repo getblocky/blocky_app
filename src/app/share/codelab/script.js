@@ -19,7 +19,7 @@ $(document).ready(function () {
         $('.content').hide();
         $.ajax({
             type: 'GET',
-            url: 'https://api.getblocky.com/staging/share/scripts/' + projectId,
+            url: 'https://api.getblocky.com/prod/share/scripts/' + projectId,
             dataType: 'json',
             success: function (data) {
                 $('#project-name').text(data.name);

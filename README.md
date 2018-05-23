@@ -24,7 +24,7 @@ Features:
 
 ## About the Server
 
-Currently we have a sandbox server for beta demo purpose only but we can't guarantee the quality of the service persists good if the amount of connections becomes large. The server can be accessed via this link http://play.getblocky.com
+Currently we have a sandbox server for beta demo purpose only but we can't guarantee the quality of the service persists good if the amount of connections becomes large. The server can be accessed via this link http://app.getblocky.com
 
 
 ## Documentation
