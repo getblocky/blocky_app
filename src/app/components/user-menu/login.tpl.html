@@ -35,7 +35,7 @@
 					<md-icon aria-label="{{'login.username' | translate}}" class="material-icons">
 						email
 					</md-icon>
-					<input required id="username-input" type="email" autofocus ng-model="vm.user.name" />
+					<input ng-required="true" id="username-input" type="email" autofocus ng-model="vm.user.name" />
 				</md-input-container>
 
 				<md-input-container class="md-block">
@@ -43,7 +43,7 @@
 					<md-icon aria-label="{{'common.password' | translate}}" class="material-icons">
 						lock
 					</md-icon>
-					<input required id="password-input" type="password" ng-model="vm.user.password" />
+					<input ng-required="true" id="password-input" type="password" ng-model="vm.user.password" />
 				</md-input-container>
 
 				<div layout-gt-sm="column" layout-align="space-between stretch">
