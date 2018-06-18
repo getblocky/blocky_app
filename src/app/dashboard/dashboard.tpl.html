@@ -16,9 +16,6 @@
 
 -->
 <div id="sub-header" layout="row" class="md-whiteframe-4dp" ng-hide="vm.Fullscreen.isEnabled()">
-    <md-button ng-click="vm.addNewDashboard()" class="md-icon-button" aria-label="Add Dashboard" ng-if="!vm.editMode">
-        <ng-md-icon icon="add_circle_outline"></ng-md-icon>
-    </md-button>
     <md-select ng-model="vm.currentDashboard" placeholder="Select a dashboard" class="md-no-underline" ng-disabled="vm.editMode"
         ng-model-options="{trackBy: '$value.id'}">
         <md-option ng-repeat="dashboard in vm.dashboards | orderBy: 'name'" ng-value="dashboard" ng-click="vm.currentDashboardIndex = $index">
@@ -26,15 +23,22 @@
         </md-option>
     </md-select>
     <span flex></span>
-    <md-button class="md-icon-button" aria-label="Edit Dashboard" ng-show="!vm.editMode && vm.currentDashboard.id" ng-click="vm.editDashboard()">
-        <ng-md-icon icon="edit"></ng-md-icon>
+    <md-button ng-click="vm.addNewDashboard()" ng-if="!vm.editMode">
+        <md-icon class="material-icons">add_circle_outline</md-icon>
+        <span translate hide-xs>Add Dashboard</span>
     </md-button>
-    <md-button class="md-icon-button" aria-label="Add Widget" ng-show="vm.editMode" ng-click="vm.toggleWidgetList()">
-        <ng-md-icon icon="add_circle_outline"></ng-md-icon>
+    <md-button ng-show="!vm.editMode && vm.currentDashboard.id" ng-click="vm.editDashboard()">
+        <md-icon class="material-icons">edit</md-icon>
+        <span translate hide-xs>Edit Dashboard</span>
+    </md-button>
+    <md-button ng-show="vm.editMode" ng-click="vm.toggleWidgetList()">
+        <md-icon class="material-icons">add_circle_outline</md-icon>
+        <span translate hide-xs>Add Widget</span>
     </md-button>
     <md-menu ng-if="vm.isUserLoaded" md-position-mode="target-right target" ng-show="vm.editMode">
-        <md-button class="md-icon-button" aria-label="Dashboard Menu" ng-click="$mdOpenMenu($event)">
-            <ng-md-icon icon="settings"></ng-md-icon>
+        <md-button ng-click="$mdOpenMenu($event)">
+            <md-icon class="material-icons">settings</md-icon>
+            <span translate hide-xs>Setting</span>
         </md-button>
         <md-menu-content width="4">
             <md-menu-item>
@@ -51,11 +55,12 @@
             </md-menu-item>
         </md-menu-content>
     </md-menu>
-    <md-button class="md-icon-button" aria-label="Run Dashboard" ng-show="vm.editMode" ng-click="vm.runDashboard()">
-        <ng-md-icon icon="play_circle_outline"></ng-md-icon>
+    <md-button ng-show="vm.editMode" ng-click="vm.runDashboard()">
+        <md-icon class="material-icons">play_circle_outline</md-icon>
+        <span translate hide-xs>Run Dashboard</span>
     </md-button>
-    <md-button ng-click="vm.toggleFullScreen()" class="md-icon-button" aria-label="Fullscreen" ng-show="!vm.editMode">
-        <ng-md-icon icon="{{vm.Fullscreen.isEnabled() ? 'fullscreen_exit' : 'fullscreen'}}"></ng-md-icon>
+    <md-button ng-click="vm.toggleFullScreen()" ng-show="!vm.editMode">
+        <md-icon class="material-icons">{{vm.Fullscreen.isEnabled() ? 'fullscreen_exit' : 'fullscreen'}}</md-icon>
     </md-button>
 </div>
 <div flex layout="column">
