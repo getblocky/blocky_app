@@ -24,7 +24,7 @@
     </md-select>
     <span flex></span>
     <md-button ng-click="vm.addNewDashboard()" ng-if="!vm.editMode">
-        <md-icon class="material-icons">create_new_folder</md-icon>
+        <md-icon class="material-icons">add_circle_outline</md-icon>
         <span translate hide-xs>Add Dashboard</span>
     </md-button>
     <md-button ng-show="!vm.editMode && vm.currentDashboard.id" ng-click="vm.editDashboard()">
@@ -32,7 +32,7 @@
         <span translate hide-xs>Edit Dashboard</span>
     </md-button>
     <md-button ng-show="vm.editMode" ng-click="vm.toggleWidgetList()">
-        <md-icon class="material-icons">widgets</md-icon>
+        <md-icon class="material-icons">add_circle_outline</md-icon>
         <span translate hide-xs>Add Widget</span>
     </md-button>
     <md-menu ng-if="vm.isUserLoaded" md-position-mode="target-right target" ng-show="vm.editMode">
@@ -56,7 +56,7 @@
         </md-menu-content>
     </md-menu>
     <md-button ng-show="vm.editMode" ng-click="vm.runDashboard()">
-        <md-icon class="material-icons">play_circle_filled</md-icon>
+        <md-icon class="material-icons">play_circle_outline</md-icon>
         <span translate hide-xs>Run Dashboard</span>
     </md-button>
     <md-button ng-click="vm.toggleFullScreen()" ng-show="!vm.editMode">
